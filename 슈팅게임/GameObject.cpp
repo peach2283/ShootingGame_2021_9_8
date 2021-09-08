@@ -170,11 +170,27 @@ void GameObject::addBoxCollider2D(float x, float y, float width, float height)
 
 void GameObject::addChildObject(GameObject* o, int layer)
 {
-	childObject.push_back(o);	
+	childObject.push_back(o);		
 	ObjectManager::instantiate(o, layer);
 
 	//부모객체의 위치가..자식객체의 원점이 되도록..자식 객체를 이동시킴//
 	o->translate(px, py);
+}
+
+void GameObject::delChildObject(GameObject* o)
+{
+	//자식 목록에서..제거하기//
+	for (int i = 0; i < childObject.size(); i++)
+	{
+		if (childObject[i] == o)
+		{			
+			childObject.erase( childObject.begin() + i );
+			break;
+		}
+	}
+
+	//오브젝트 매니저에서 삭제하기//
+	ObjectManager::destroy(o);
 }
 
 vector<BoxCollider2D*> GameObject::getBoxCollider2D()
@@ -197,3 +213,17 @@ void GameObject::onDrawGizmos()
 
 void GameObject::onTriggerStay(GameObject* other)
 {}
+
+GameObject* GameObject::find(string name)
+{
+	for (int i = 0; i < childObject.size(); i++)
+	{
+		if (childObject[i]->getName() == name)
+		{
+			return childObject[i];
+		}
+	}
+
+	//해당 자식오브젝트를 찾지 못한경우//
+	return nullptr;
+}

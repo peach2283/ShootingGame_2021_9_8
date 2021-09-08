@@ -55,12 +55,16 @@ public:
 	//충돌체 추가하기//
 	void addBoxCollider2D(float x, float y, float width, float height);
 
-	//자식 게임오브젝트..추가하기//
+	//자식 게임오브젝트..추가/삭제 하기//
 	void addChildObject(GameObject* o, int layer);
+	void delChildObject(GameObject* o);
 
 	//충돌체 반환하기
 	vector<BoxCollider2D*> getBoxCollider2D();
 
 	//충돌했음을...알려주는 함수(충돌 이벤트 함수)//
 	virtual void onTriggerStay(GameObject * other);
+
+	//이름으로..자식객체 찾기
+	GameObject* find(string name);
 };

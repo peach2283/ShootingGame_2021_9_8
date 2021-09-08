@@ -89,7 +89,7 @@ void ObjectManager::checkCollision()
 
 void ObjectManager::checkObjectCollision(GameObject* objI, GameObject* objJ)
 {
-	if (objI->getDead() == false && objJ->getDead() == false)
+	if (objI->getDead() == false && objJ->getDead() == false && objI->getActive() == true && objJ->getActive()== true)
 	{
 		vector<BoxCollider2D*> boxI = objI->getBoxCollider2D();
 		vector<BoxCollider2D*> boxJ = objJ->getBoxCollider2D();

@@ -36,6 +36,7 @@
 #include "EnemyBulletExp.h"
 #include "ShipExp.h"
 #include "Shield.h"
+#include "EnemySpawner.h"
 
 #define WIDTH  480
 #define HEIGHT 800

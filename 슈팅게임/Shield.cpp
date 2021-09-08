@@ -1,6 +1,6 @@
 #include "framework.h"
 
-Shield::Shield(float px, float py) :Animation("","", false, px, py)
+Shield::Shield(float px, float py) :Animation("","πÊ∆–", true , px, py)
 {}
 
 Shield::~Shield()

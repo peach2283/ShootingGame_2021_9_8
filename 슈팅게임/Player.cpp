@@ -14,7 +14,8 @@ Player::Player(float px, float py) : GameObject("플레이어","", true, px, py)
 
 	this->hp = 100;
 
-	this->state = State::moveUp;
+	this->state       = State::moveUp;
+	this->shieldTimer = 3;
 }
 
 Player::~Player()
@@ -66,9 +67,11 @@ void Player::update()
 
 		case State::control:
 		{
-			move(); //이동
-			fire(); //발사	
+			move();		//이동
+			fire();		//발사	
+			shield();	//방패비활성화			
 		}
+
 		break;
 	}
 }
@@ -79,6 +82,27 @@ void Player::draw()
 	float py = getPy();
 
 	Bitmap::drawBMP(px, py, &image[index]);
+}
+
+void Player::shield()
+{
+	//방패 비활성화 시간측정하기//
+	shieldTimer = shieldTimer - Time::deltaTime;
+
+	if (shieldTimer <= 0)
+	{
+		//방패 자식오브젝트 찾기
+		GameObject* o = find("방패");
+
+		if (o != nullptr)
+		{
+			o->setActive(false); //방패숨김
+			///delChildObject(o);
+		}
+		else {
+			cout << "방패를 찾지 못함" << endl;
+		}
+	}
 }
 
 void Player::move()
@@ -204,7 +228,7 @@ void Player::fire()
 }
 
 void Player::onTriggerStay(GameObject* other)
-{
+{	
 	string tag = other->getTag();
 
 	if (tag == "적기")
@@ -228,9 +252,10 @@ void Player::onTriggerStay(GameObject* other)
 		//플레이어 폭발 및 제거
 		if (hp <= 0)
 		{
-			explode();
+			//explode();
 		}
 	}
+	
 }
 
 void Player::explode()

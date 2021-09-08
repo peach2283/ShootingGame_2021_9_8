@@ -22,6 +22,8 @@ private:
 
 	State state;
 
+	float shieldTimer; //보호방패 지속시간(control 이후)
+
 public:
 	Player(float px, float py);
 	~Player();
@@ -35,6 +37,9 @@ public:
 
 	//플레이어..레이어..폭탄 발사 함수//
 	void fire();
+
+	//플레이어..방패 숨기기
+	void shield();
 
 	//충돌이벤트..처리하기(오버라이딩)//
 	void onTriggerStay(GameObject* other);

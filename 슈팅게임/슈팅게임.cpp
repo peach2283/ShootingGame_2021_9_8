@@ -47,13 +47,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     Time::init();     //타이머 초기화
 
     //...배경 및 초기 객체..추가하기//
-    ObjectManager::instantiate(new GameBG()                 , 0);
-    //ObjectManager::instantiate(new Player(240-40, HEIGHT+50), 0);
-    ObjectManager::instantiate(new Player(240 - 40, 650), 0);
+    ObjectManager::instantiate(new GameBG()                  ,  0);
+    ObjectManager::instantiate(new Player(240-40 , HEIGHT+50),  0);
+    ObjectManager::instantiate(new EnemySpawner(WIDTH/2,  50) , 0);
+    
 
-    ObjectManager::instantiate(new Enemy (220,    -150) ,1);
-    ObjectManager::instantiate(new Enemy (50,     -150), 1);
-    ObjectManager::instantiate(new Enemy (320,    -150), 1);
+    //ObjectManager::instantiate(new Enemy (220,    -150) ,1);
+    //ObjectManager::instantiate(new Enemy (50,     -150), 1);
+    //ObjectManager::instantiate(new Enemy (320,    -150), 1);
 
     //보호방패 ... 테스트//
     //ObjectManager::instantiate(new Shield(0, 0), 0);
