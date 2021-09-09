@@ -18,6 +18,8 @@ private:
 	float hp;
 	float lifeTime; //추락상태 라이프타임
 
+	float hMovePos; //좌우이동 시작 위치
+
 public:
 	Enemy(float px, float py);
 	~Enemy();

@@ -9,6 +9,8 @@ private:
 	float spawnTimer;
 	float spawnDelay;
 
+	int maxSpawn;  //적기 최대 스폰횟수
+
 public:
 	EnemySpawner(float px, float py);
 	~EnemySpawner();

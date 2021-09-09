@@ -45,6 +45,9 @@ void Enemy::start()
 	addBoxCollider2D(67, 10, 56, 13 );  //꼬리날개 
 	addBoxCollider2D(88, 23, 14, 114);  //가운데 몸통
 	addBoxCollider2D( 4, 91, 182,14 );  //가운데 날개
+
+	//좌우이동 랜덤위치
+	hMovePos = Random::Range(50, 150);
 }
 
 void Enemy::update()
@@ -60,9 +63,10 @@ void Enemy::update()
 
 			int py = getPy();
 
-			if (py >= 70)
+			if (py >= hMovePos)
 			{
-				state = State::moveLeft;
+				State dir[2] = {State::moveLeft, State::moveRight};
+				state = dir[ Random::Range(0,1) ];
 			}
 		}
 		break;
