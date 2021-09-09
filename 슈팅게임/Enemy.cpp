@@ -107,7 +107,7 @@ void Enemy::update()
 
 			if (lifeTime <= 0)
 			{
-				destroy(this);			
+				destroy(this);					
 			}
 		}
 		break;
@@ -171,4 +171,9 @@ void Enemy::onTriggerStay(GameObject* other)
 			destroy(this);						       //적기제거
 		}
 	}
+}
+
+void Enemy::onDestroy()
+{
+	GameManager::subEnemy();  //적기카운트 감소
 }

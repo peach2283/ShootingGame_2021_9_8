@@ -15,18 +15,24 @@ void EnemySpawner::start()
 
 void EnemySpawner::update()
 {
+	cout << "적기 카운트 " << GameManager::getEnemyCount() << endl;
+
 	//스폰시간 측정
 	spawnTimer = spawnTimer + Time::deltaTime;
 
 	if (spawnTimer >= spawnDelay)
 	{
-		//적기 스폰하기//
-		float px = getPx();
-		float py = getPy();
+		if (GameManager::getEnemyCount() < 3)
+		{
+			//적기 스폰하기//
+			float px = getPx();
+			float py = getPy();
 
-		instantiate(new Enemy(px, py), 1);
+			instantiate(new Enemy(px - 95, py - 137), 1); //적기스폰
+			GameManager::addEnemy();                  //적기 카운트 증가
 
-		spawnTimer = 0;
+			spawnTimer = 0;
+		}
 	}
 }
 

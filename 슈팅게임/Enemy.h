@@ -27,4 +27,7 @@ public:
 
 	//충돌 이벤트 처리 ... 오버라이딩//
 	void onTriggerStay(GameObject* other);
+
+	//제거 이벤트 처리...오버라이디//
+	void onDestroy();
 };

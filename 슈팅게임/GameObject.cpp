@@ -115,6 +115,12 @@ void GameObject::setDead(bool dead)
 {
 	this->dead = dead;
 
+	//destroy이벤트 발생시킴//
+	if (dead == true)
+	{
+		onDestroy();
+	}
+
 	//자식객체..이동시키기//
 	for (int i = 0; i < childObject.size(); i++)
 	{
@@ -212,6 +218,9 @@ void GameObject::onDrawGizmos()
 }
 
 void GameObject::onTriggerStay(GameObject* other)
+{}
+
+void GameObject::onDestroy()
 {}
 
 GameObject* GameObject::find(string name)

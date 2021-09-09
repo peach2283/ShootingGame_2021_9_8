@@ -64,6 +64,7 @@ public:
 
 	//충돌했음을...알려주는 함수(충돌 이벤트 함수)//
 	virtual void onTriggerStay(GameObject * other);
+	virtual void onDestroy();
 
 	//이름으로..자식객체 찾기
 	GameObject* find(string name);
