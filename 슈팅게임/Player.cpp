@@ -16,6 +16,8 @@ Player::Player(float px, float py) : GameObject("플레이어","", true, px, py)
 
 	this->state       = State::moveUp;
 	this->shieldTimer = 3;
+
+	this->laserCount = 0;
 }
 
 Player::~Player()
@@ -210,17 +212,24 @@ void Player::fire()
 			float px = getPx() + 28;
 			float py = getPy() - 20;
 
-			//레이저 한발 발사
-			instantiate(new PlayerLaser(px, py), 0);
-
-			//레이저 두발 발사
-			//instantiate(new PlayerLaser(px-5, py), 0);
-			//instantiate(new PlayerLaser(px+5, py), 0);
-
-			//레이저 세발 발사
-			//instantiate(new PlayerLaser(px - 8, py)  ,0);
-			//instantiate(new PlayerLaser(px, py - 10) ,0);
-			//instantiate(new PlayerLaser(px + 8, py)  ,0);
+			if (laserCount == 0)
+			{
+				//레이저 한발 발사
+				instantiate(new PlayerLaser(px, py), 0);
+			}
+			else if (laserCount == 1)
+			{
+				//레이저 두발 발사
+				instantiate(new PlayerLaser(px - 5, py), 0);
+				instantiate(new PlayerLaser(px + 5, py), 0);
+			}
+			else if (laserCount == 2)
+			{
+				//레이저 세발 발사
+				instantiate(new PlayerLaser(px - 8, py), 0);
+				instantiate(new PlayerLaser(px, py - 10), 0);
+				instantiate(new PlayerLaser(px + 8, py), 0);
+			}
 
 			fireTimer = 0; //타이머 리셋하기
 		}
@@ -255,7 +264,17 @@ void Player::onTriggerStay(GameObject* other)
 			//explode();
 		}
 	}
-	
+	else if (tag == "레이저아이템")
+	{
+		if (laserCount < 2)
+		{
+			//레이저발사갯수 늘리기//
+			laserCount++;
+		}
+
+		//레이저아이템 삭제//
+		destroy(other);
+	}	
 }
 
 void Player::explode()

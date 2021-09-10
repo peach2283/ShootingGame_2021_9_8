@@ -173,6 +173,15 @@ void Enemy::onTriggerStay(GameObject* other)
 
 			instantiate(new ShipExp(px+30, py+20), 1); //적기폭발효과
 			destroy(this);						       //적기제거
+
+			//레이저아이템 생성확률
+			int p = Random::Range(0, 32767);
+
+			if (p < 32767/2)
+			{
+				//레이저아이템 생성//
+				instantiate(new LaserItem(px + 88, py + 50), 0);
+			}
 		}
 	}
 }

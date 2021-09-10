@@ -51,8 +51,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     ObjectManager::instantiate(new Player(240-40 , HEIGHT+50),  0);
     ObjectManager::instantiate(new EnemySpawner(WIDTH/2,  10),  0);
     
-    //보호방패 ... 테스트//
-    //ObjectManager::instantiate(new Shield(0, 0), 0);
+    //레이어아이템 테스트//
+    //ObjectManager::instantiate(new LaserItem(100, 300), 0);
+    //ObjectManager::instantiate(new LaserItem(200, 300), 0);
+    //ObjectManager::instantiate(new LaserItem(300, 300), 0);
+    //ObjectManager::instantiate(new LaserItem(400, 300), 0);
 
     // 기본 메시지 루프입니다:
     while (msg.message != WM_QUIT)
