@@ -7,6 +7,10 @@ class Enemy : public Animation
 	enum class State { moveDown = 0, moveLeft = 1, moveRight = 2, fall = 3 };
 
 private:
+	//적기 스폰번호
+	static int Num;  //공유
+	int num;         //개별객체의 번호
+
 	float speed;
 	float fallSpeed;
 

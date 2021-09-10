@@ -6,7 +6,7 @@ EnemySpawner::EnemySpawner(float px, float py)
 	this->spawnTimer = 0;
 	this->spawnDelay = 2;
 
-	this->maxSpawn = 10;
+	this->maxSpawn = GameManager::getEnemyMax();
 }
 
 EnemySpawner::~EnemySpawner()
