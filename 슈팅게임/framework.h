@@ -40,6 +40,7 @@
 #include "GameManager.h"
 #include "LaserItem.h"
 #include "PlayerBomb.h"
+#include "PlayerBombExp.h"
 
 #define WIDTH  480
 #define HEIGHT 800

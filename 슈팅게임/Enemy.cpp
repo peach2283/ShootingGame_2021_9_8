@@ -4,13 +4,13 @@ int Enemy::Num = 0;
 
 Enemy::Enemy(float px, float py) : Animation("적기","",true, px, py)
 {
-	this->speed		= 100;
+	this->speed		= 50;
 	this->fallSpeed = 200;
 
 	this->state = State::moveDown;
 
 	this->fireTimer = 0;
-	this->fireDelay = 0.5;
+	this->fireDelay = 1;
 
 	this->hp	   = 100;
 	this->lifeTime = 5;
@@ -197,6 +197,20 @@ void Enemy::onTriggerStay(GameObject* other)
 				instantiate(new LaserItem(px + 88, py + 50), 0);
 			}
 			**************************/
+		}
+	}
+	else if (tag == "방패" || tag == "플레이어폭탄폭발")
+	{
+		//적기 폭발 효과도..필요하면...이동할수 있음//
+
+		//레이저아이템..생성패턴(배열)사용하기
+		if (GameManager::doDropLaserItem(num) == true)
+		{
+			float px = this->getPx();
+			float py = this->getPy();
+
+			//레이저아이템 생성//
+			instantiate(new LaserItem(px + 88, py + 50), 0);
 		}
 	}
 }

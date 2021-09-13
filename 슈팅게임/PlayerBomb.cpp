@@ -28,5 +28,12 @@ void PlayerBomb::update()
 
 void PlayerBomb::onAnimationEnd()
 {
-	destroy(this);
+	//气藕气惯 瓤苞
+	float px = getPx();
+	float py = getPy();
+
+	instantiate(new PlayerBombExp(px-50, py-54), 2);
+
+	destroy(this);  //气藕按眉 力芭
+
 }

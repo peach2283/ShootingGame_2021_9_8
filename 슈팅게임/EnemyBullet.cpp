@@ -2,7 +2,7 @@
 
 EnemyBullet::EnemyBullet(float px, float py) : Sprite("Àû±âÃÑ¾Ë","",true, px, py)
 {
-	this->speed	   = 100;
+	this->speed	   = 150;
 	this->lifeTime = 10;
 }
 
