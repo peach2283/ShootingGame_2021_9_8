@@ -156,7 +156,7 @@ void Enemy::onTriggerStay(GameObject* other)
 		destroy(other);
 
 		//적기 체력 출력
-		cout << "적기 체력 " << hp << endl;
+		//cout << "적기 체력 " << hp << endl;
 
 		//체력감소에 따라서..애니메이션 변경 및 폭발//
 		if (70 < hp && hp <= 100)

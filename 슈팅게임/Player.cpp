@@ -201,7 +201,7 @@ void Player::move()
 
 void Player::fire()
 {
-	//발사하기//
+	//레이저 ... 발사하기//
 	if (Input::getKey("space") == true)
 	{		
 		//발사시간 측정하기
@@ -233,6 +233,15 @@ void Player::fire()
 
 			fireTimer = 0; //타이머 리셋하기
 		}
+	}
+
+	//폭탄...발사하기//
+	if (Input::getKeyDown("z") == true)
+	{
+		float px = getPx();
+		float py = getPy();
+
+		instantiate(new PlayerBomb(px+15, py), 0);
 	}
 }
 
@@ -287,5 +296,5 @@ void Player::explode()
 	destroy(this);									//플레이어 제거
 
 	//임시로..플레이어 리스폰하기//
-	ObjectManager::instantiate(new Player(240 - 40, HEIGHT + 50), 0);
+	ObjectManager::instantiate(new Player(240 - 40, HEIGHT + 50), 1);
 }

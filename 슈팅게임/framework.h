@@ -39,6 +39,7 @@
 #include "EnemySpawner.h"
 #include "GameManager.h"
 #include "LaserItem.h"
+#include "PlayerBomb.h"
 
 #define WIDTH  480
 #define HEIGHT 800

@@ -48,15 +48,12 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     //...배경 및 초기 객체..추가하기//
     ObjectManager::instantiate(new GameBG()                  ,  0);
-    ObjectManager::instantiate(new Player(240-40 , HEIGHT+50),  0);
+    ObjectManager::instantiate(new Player(240-40 , HEIGHT+50),  1);
     ObjectManager::instantiate(new EnemySpawner(WIDTH/2,  10),  0);
     
-    //레이어아이템 테스트//
-    //ObjectManager::instantiate(new LaserItem(100, 300), 0);
-    //ObjectManager::instantiate(new LaserItem(200, 300), 0);
-    //ObjectManager::instantiate(new LaserItem(300, 300), 0);
-    //ObjectManager::instantiate(new LaserItem(400, 300), 0);
-
+    //플레이어폭탄 테스트//
+    //ObjectManager::instantiate(new PlayerBomb(100, 300), 0);
+    
     // 기본 메시지 루프입니다:
     while (msg.message != WM_QUIT)
     {   
