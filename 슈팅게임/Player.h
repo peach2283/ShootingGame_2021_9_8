@@ -24,6 +24,7 @@ private:
 
 	float shieldTimer; //보호방패 지속시간(control 이후)
 	int   laserCount;  //발사되는 레이저 갯수 (0 - 한번, 1 - 두발 , 2 - 세발)
+	int   bombCount;   //폭탄갯수 
 
 public:
 	Player(float px, float py);

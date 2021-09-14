@@ -7,7 +7,7 @@ class Sprite : public GameObject
 {
 private:
 	Image image;
-
+	bool  enabled;
 public:
 	Sprite(string tag, string name, bool active, float px, float py);
 	~Sprite();
@@ -18,4 +18,8 @@ public:
 
 	//구조체 이미지 그리기
 	void draw();
+
+	//enabled 게터/세터
+	bool getEnabled();
+	void setEnabled(bool enabled);
 };

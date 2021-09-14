@@ -187,6 +187,12 @@ void Enemy::onTriggerStay(GameObject* other)
 				instantiate(new LaserItem(px + 88, py + 50), 0);
 			}
 
+			//폭탄아이템..생성패턴(배열)사용하기
+			if (GameManager::doDropBombItem(num) == true)
+			{
+				instantiate(new BombItem(px + 88, py + 80), 0);
+			}
+
 			//레이저아이템 생성확률
 			/***********************
 			int p = Random::Range(0, 32767);
@@ -203,14 +209,20 @@ void Enemy::onTriggerStay(GameObject* other)
 	{
 		//적기 폭발 효과도..필요하면...이동할수 있음//
 
+		float px = this->getPx();
+		float py = this->getPy();
+
 		//레이저아이템..생성패턴(배열)사용하기
 		if (GameManager::doDropLaserItem(num) == true)
-		{
-			float px = this->getPx();
-			float py = this->getPy();
-
+		{		
 			//레이저아이템 생성//
 			instantiate(new LaserItem(px + 88, py + 50), 0);
+		}
+
+		//폭탄아이템..생성패턴(배열)사용하기
+		if (GameManager::doDropBombItem(num) == true)
+		{
+			instantiate(new BombItem(px + 88, py + 80), 0);
 		}
 	}
 }

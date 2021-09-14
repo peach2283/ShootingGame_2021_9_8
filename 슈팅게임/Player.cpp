@@ -18,6 +18,7 @@ Player::Player(float px, float py) : GameObject("ÇÃ·¹ÀÌ¾î","", true, px, py)
 	this->shieldTimer = 3;
 
 	this->laserCount = 0;
+	this->bombCount  = 3;
 }
 
 Player::~Player()
@@ -238,10 +239,20 @@ void Player::fire()
 	//ÆøÅº...¹ß»çÇÏ±â//
 	if (Input::getKeyDown("z") == true)
 	{
-		float px = getPx();
-		float py = getPy();
+		if (bombCount > 0)
+		{
+			float px = getPx();
+			float py = getPy();
 
-		instantiate(new PlayerBomb(px+15, py), 0);
+			instantiate(new PlayerBomb(px + 15, py), 0);
+
+			bombCount--; //ÆøÅº°¹¼ö ÁÙÀÌ±â
+		}
+		else {
+			cout << "---³²¾ÆÀÖ´Â ÆøÅºÀÌ ¾ø½À´Ï´Ù---" << endl;
+		}
+
+		cout << "ÆøÅº °¹¼ö " << bombCount << endl;
 	}
 }
 
@@ -283,7 +294,18 @@ void Player::onTriggerStay(GameObject* other)
 
 		//·¹ÀÌÀú¾ÆÀÌÅÛ »èÁ¦//
 		destroy(other);
-	}	
+
+	}
+	else if (tag == "ÆøÅº¾ÆÀÌÅÛ")
+	{
+		//ÆøÅº°¹¼ö Áõ°¡
+		bombCount++;
+
+		cout << "ÆøÅº °¹¼ö " << bombCount << endl;
+
+		//ÆøÅº¾ÆÀÌÅÛ »èÁ¦//
+		destroy(other);
+	}
 }
 
 void Player::explode()

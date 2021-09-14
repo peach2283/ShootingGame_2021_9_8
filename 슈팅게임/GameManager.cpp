@@ -1,11 +1,18 @@
 #include "framework.h"
 
 int  GameManager::enemyCount			   = 0;
+
 bool GameManager::dropLaserItem[ENEMY_MAX] = { false, false, false, false, false,    
 											   false, false, false, false, true,
 
 											   false, false, true, false, false,
 											   false, false, true, true , true };
+
+bool GameManager::dropBombItem[ENEMY_MAX] =  { false, false, false, false, true,
+											   false, false, false, false, true,
+
+											   false, false, false, false, true,
+											   false, false, false, false, true };
 
 void GameManager::addEnemy() //스폰에서..적기 카운트 증가
 {
@@ -25,6 +32,11 @@ int GameManager::getEnemyCount()
 bool GameManager::doDropLaserItem(int num)
 {
 	return dropLaserItem[num];
+}
+
+bool GameManager::doDropBombItem(int num)
+{
+	return dropBombItem[num];
 }
 
 int GameManager::getEnemyMax()

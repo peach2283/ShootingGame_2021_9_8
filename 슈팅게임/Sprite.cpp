@@ -6,6 +6,8 @@ Sprite::Sprite(string tag, string name, bool active, float px, float py)
 	image.width  = 0;
 	image.height = 0;
 	image.argb   = nullptr;
+
+	this->enabled = true;
 }
 
 Sprite::~Sprite()
@@ -28,9 +30,22 @@ void Sprite::setImage(const char* fileName, int x, int y, int width, int height)
 
 void Sprite::draw()
 {
-	//이미지 그리기//
-	float px = getPx();
-	float py = getPy();
+	if (enabled == true)
+	{
+		//이미지 그리기//
+		float px = getPx();
+		float py = getPy();
 
-	Bitmap::drawBMP(px, py, &image);
+		Bitmap::drawBMP(px, py, &image);
+	}
+}
+
+bool Sprite::getEnabled()
+{
+	return enabled;
+}
+
+void Sprite::setEnabled(bool enabled)
+{
+	this->enabled = enabled;
 }

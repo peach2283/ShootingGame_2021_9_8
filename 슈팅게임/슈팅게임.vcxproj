@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="BMP.h" />
+    <ClInclude Include="BombItem.h" />
     <ClInclude Include="BoxCollider2D.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="deltaTime.h" />
@@ -172,6 +173,7 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="BMP.cpp" />
+    <ClCompile Include="BombItem.cpp" />
     <ClCompile Include="BoxCollider2D.cpp" />
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="deltaTime.cpp" />
