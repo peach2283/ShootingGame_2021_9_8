@@ -111,6 +111,12 @@
     <ClInclude Include="Boss.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Propeller.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Wing.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="슈팅게임.cpp">
@@ -198,6 +204,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Boss.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Propeller.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Wing.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

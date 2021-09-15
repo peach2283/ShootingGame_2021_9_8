@@ -164,12 +164,14 @@
     <ClInclude Include="PlayerBombExp.h" />
     <ClInclude Include="PlayerLaser.h" />
     <ClInclude Include="PlayerLaserExp.h" />
+    <ClInclude Include="Propeller.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Shield.h" />
     <ClInclude Include="ShipExp.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Wing.h" />
     <ClInclude Include="슈팅게임.h" />
   </ItemGroup>
   <ItemGroup>
@@ -197,10 +199,12 @@
     <ClCompile Include="PlayerBombExp.cpp" />
     <ClCompile Include="PlayerLaser.cpp" />
     <ClCompile Include="PlayerLaserExp.cpp" />
+    <ClCompile Include="Propeller.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="ShipExp.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Wing.cpp" />
     <ClCompile Include="슈팅게임.cpp" />
   </ItemGroup>
   <ItemGroup>

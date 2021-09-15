@@ -52,7 +52,7 @@ void EnemySpawner::update()
 	}
 	else { //보스 스폰하기
 
-		instantiate(new Boss(0, 0), 0);
+		//instantiate(new Boss(0, 0), 0);
 		cout << "보스 스폰하기" << endl;
 
 		//적기 스포너..제거하기//
