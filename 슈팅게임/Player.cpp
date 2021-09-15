@@ -317,6 +317,6 @@ void Player::explode()
 	instantiate(new ShipExp(px - 20, py - 10), 1);  //플레이어 폭발 효과
 	destroy(this);									//플레이어 제거
 
-	//임시로..플레이어 리스폰하기//
-	ObjectManager::instantiate(new Player(240 - 40, HEIGHT + 50), 1);
+	//플레이어 리스폰하기//
+	GameManager::playerSpawn(240 - 40, HEIGHT + 50);
 }

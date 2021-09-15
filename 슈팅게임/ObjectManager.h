@@ -4,6 +4,7 @@
 #include "GameObject.h"
 
 #define MAX_LAYER 10
+#define UI_LAYER  6
 
 class ObjectManager
 {

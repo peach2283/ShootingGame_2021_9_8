@@ -142,6 +142,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="BMP.h" />
     <ClInclude Include="BombItem.h" />
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="BoxCollider2D.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="deltaTime.h" />
@@ -153,6 +154,7 @@
     <ClInclude Include="GameBG.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="graphic.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="LaserItem.h" />
@@ -174,6 +176,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="BMP.cpp" />
     <ClCompile Include="BombItem.cpp" />
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BoxCollider2D.cpp" />
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="deltaTime.cpp" />
@@ -184,6 +187,7 @@
     <ClCompile Include="GameBG.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="graphic.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="LaserItem.cpp" />

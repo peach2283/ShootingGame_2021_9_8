@@ -14,6 +14,8 @@ bool GameManager::dropBombItem[ENEMY_MAX] =  { false, false, false, false, true,
 											   false, false, false, false, true,
 											   false, false, false, false, true };
 
+int GameManager::playerCount = 3;
+
 void GameManager::addEnemy() //스폰에서..적기 카운트 증가
 {
 	enemyCount++;
@@ -42,4 +44,18 @@ bool GameManager::doDropBombItem(int num)
 int GameManager::getEnemyMax()
 {
 	return ENEMY_MAX;
+}
+
+void GameManager::playerSpawn(float px, float py)
+{
+	if (playerCount > 0)
+	{
+		ObjectManager::instantiate(new Player(px, py), 1);
+		playerCount--;
+	}
+	else {
+		
+		//게임오버 UI 생성하기//
+		ObjectManager::instantiate(new GameOver(30, 250), UI_LAYER);
+	}
 }

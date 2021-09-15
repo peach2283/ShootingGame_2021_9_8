@@ -42,6 +42,8 @@
 #include "PlayerBomb.h"
 #include "PlayerBombExp.h"
 #include "BombItem.h"
+#include "GameOver.h"
+#include "Boss.h"
 
 #define WIDTH  480
 #define HEIGHT 800
