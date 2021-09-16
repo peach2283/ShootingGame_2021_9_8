@@ -12,4 +12,6 @@ public:
 
 	void start();
 	void onTriggerStay(GameObject* other);
+
+	void explode();
 };

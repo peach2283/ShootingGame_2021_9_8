@@ -10,7 +10,8 @@ GameObject::GameObject(string tag, string name, bool active, float px, float py)
 	this->px = px;
 	this->py = py;	
 
-	this->dead = false; //생성자에서..게임오브젝트가 dead가 아님
+	this->dead   = false;   //생성자에서..게임오브젝트가 dead가 아님
+	this->parent = nullptr; //생성자에서..부모게임오브젝트가 없음으로..초기화(addChildObject에서 부모포인터 지정)
 }
 
 GameObject::~GameObject()
@@ -166,7 +167,13 @@ void GameObject::instantiate(GameObject* o, int layer)
 
 void GameObject::destroy(GameObject* o)
 {
-	ObjectManager::destroy(o);	
+	if (o->parent == nullptr)
+	{
+		ObjectManager::destroy(o);
+	}
+	else {
+		delChildObject(o);
+	}
 }
 
 void GameObject::addBoxCollider2D(float x, float y, float width, float height)
@@ -181,6 +188,9 @@ void GameObject::addChildObject(GameObject* o, int layer)
 
 	//부모객체의 위치가..자식객체의 원점이 되도록..자식 객체를 이동시킴//
 	o->translate(px, py);
+
+	//자식객체에..부모객체 포인터..저장하기
+	o->parent = this;
 }
 
 void GameObject::delChildObject(GameObject* o)
@@ -235,4 +245,9 @@ GameObject* GameObject::find(string name)
 
 	//해당 자식오브젝트를 찾지 못한경우//
 	return nullptr;
+}
+
+GameObject* GameObject::getParent()
+{
+	return parent;
 }

@@ -37,14 +37,34 @@ void Propeller::onTriggerStay(GameObject* other)
 		instantiate(new PlayerLaserExp(ex - 15, ey - 15), 1);
 
 		//플레이어 레이저..제거하기//
-		destroy(other);		
+		destroy(other);
 
 		//체력 감소 및 애니메이션 변경
 		hp = hp - 10;
 
-		if (hp < 50)
+		if (0 < hp && hp < 50)
 		{
 			setClipId(1);
 		}
+		else if (hp <= 0)
+		{
+			explode();
+		}
 	}
+	else if (tag == "플레이어폭탄폭발")
+	{
+		explode();
+	}
+}
+
+void Propeller::explode()
+{
+	//자식폭발//
+	float px = this->getPx();
+	float py = this->getPy();
+
+	instantiate(new ShipExp(px - 40, py - 40), 1);
+
+	//자식객체제거
+	destroy(this);
 }

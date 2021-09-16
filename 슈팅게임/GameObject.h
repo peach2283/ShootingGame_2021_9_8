@@ -24,6 +24,12 @@ private:
 	//자식객체..추가하기//
 	vector<GameObject* > childObject;
 
+	//게임오브젝트가 자식으로..추가되는 경우에..부모객체의 포인터
+	GameObject* parent;
+
+	//객체 내부 사용함수들
+	void delChildObject(GameObject* o);
+
 public:
 	GameObject(string tag, string name, bool active, float px, float py);
 	virtual ~GameObject();
@@ -57,8 +63,7 @@ public:
 
 	//자식 게임오브젝트..추가/삭제 하기//
 	void addChildObject(GameObject* o, int layer);
-	void delChildObject(GameObject* o);
-
+	
 	//충돌체 반환하기
 	vector<BoxCollider2D*> getBoxCollider2D();
 
@@ -68,4 +73,7 @@ public:
 
 	//이름으로..자식객체 찾기
 	GameObject* find(string name);
+
+	//부모포인터 게터
+	GameObject* getParent();
 };

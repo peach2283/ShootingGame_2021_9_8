@@ -100,7 +100,7 @@ void Player::shield()
 		if (o != nullptr)
 		{
 			o->setActive(false); //방패숨김
-			///delChildObject(o);
+			///destroy(o);
 		}
 		else {
 			cout << "방패를 찾지 못함" << endl;

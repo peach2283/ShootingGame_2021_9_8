@@ -1,6 +1,6 @@
 #include "framework.h"
 
-Boss::Boss(float px, float py) :Sprite("", "", true, px, py)
+Boss::Boss(float px, float py) :Sprite("º¸½º", "", true, px, py)
 {}
 
 Boss::~Boss()
