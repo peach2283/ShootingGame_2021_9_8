@@ -122,7 +122,7 @@ void GameObject::setDead(bool dead)
 		onDestroy();
 	}
 
-	//자식객체..이동시키기//
+	//자식객체..제거시키기//
 	for (int i = 0; i < childObject.size(); i++)
 	{
 		childObject[i]->setDead(dead);

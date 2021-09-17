@@ -1,7 +1,9 @@
 #include "framework.h"
 
 Boss::Boss(float px, float py) :Sprite("보스", "", true, px, py)
-{}
+{
+	this->childCount = 0;
+}
 
 Boss::~Boss()
 {}
@@ -54,4 +56,19 @@ void Boss::start()
 	//레이더 자식객체
 	addChildObject(new Radar(241, 105), 0);
 	addChildObject(new Radar(241, 117), 0);
+
+
+}
+
+void Boss::onChildDestroyed()
+{
+	childCount++;
+
+	cout << "소멸된 자식객체 갯수 " << childCount <<  endl;
+
+
+	if (childCount == 3)
+	{
+		destroy(this);  //보스제거하기
+	}
 }

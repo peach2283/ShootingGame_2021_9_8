@@ -53,4 +53,8 @@ void Cannon::explode()
 
 	//자식객체제거
 	destroy(this);
+
+	//부모 보스객체에...제거되었음을 알려줌
+	Boss* boss = (Boss*)getParent();
+	boss->onChildDestroyed();
 }
