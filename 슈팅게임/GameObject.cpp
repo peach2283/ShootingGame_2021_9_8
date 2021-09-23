@@ -172,7 +172,7 @@ void GameObject::destroy(GameObject* o)
 		ObjectManager::destroy(o);
 	}
 	else {
-		delChildObject(o);
+		o->parent->delChildObject(o);
 	}
 }
 

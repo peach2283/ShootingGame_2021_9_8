@@ -13,9 +13,6 @@ void Boss::start()
 	//폭발되지 안은 보스
 	setImage("Asset/보스.bmp", 0, 0, 493, 206);
 
-	//폭발된 보스
-	//setImage("Asset/보스.bmp", 0, 613, 385, 182);
-
 	//**************보스 자식객체 추가하기***************//
 
 	//프로펠러 자식객체
@@ -56,8 +53,6 @@ void Boss::start()
 	//레이더 자식객체
 	addChildObject(new Radar(241, 105), 0);
 	addChildObject(new Radar(241, 117), 0);
-
-
 }
 
 void Boss::onChildDestroyed()
@@ -66,9 +61,17 @@ void Boss::onChildDestroyed()
 
 	cout << "소멸된 자식객체 갯수 " << childCount <<  endl;
 
+	if (childCount == 1)
+	{	
+		//보스 폭발 시키기
 
-	if (childCount == 3)
-	{
-		destroy(this);  //보스제거하기
+		//보스 제거하기
+		destroy(this); 
+
+		//폭발된 보스 객체(DeadBoss) 생성하기//
+		float px = getPx();
+		float py = getPy();
+
+		instantiate(new DeadBoss(px+47, py+20), 0);
 	}
 }

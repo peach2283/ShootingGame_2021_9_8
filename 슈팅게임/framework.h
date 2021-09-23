@@ -49,6 +49,7 @@
 #include "Gun.h"
 #include "Cannon.h"
 #include "Radar.h"
+#include "DeadBoss.h"
 
 #define WIDTH  480
 #define HEIGHT 800

@@ -145,6 +145,7 @@
     <ClInclude Include="Boss.h" />
     <ClInclude Include="BoxCollider2D.h" />
     <ClInclude Include="Cannon.h" />
+    <ClInclude Include="DeadBoss.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="deltaTime.h" />
     <ClInclude Include="Enemy.h" />
@@ -184,6 +185,7 @@
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BoxCollider2D.cpp" />
     <ClCompile Include="Cannon.cpp" />
+    <ClCompile Include="DeadBoss.cpp" />
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="deltaTime.cpp" />
     <ClCompile Include="Enemy.cpp" />
