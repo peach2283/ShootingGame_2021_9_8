@@ -129,6 +129,12 @@
     <ClInclude Include="DeadBoss.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="BossExp.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ReturningPlayer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="슈팅게임.cpp">
@@ -234,6 +240,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="DeadBoss.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BossExp.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ReturningPlayer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

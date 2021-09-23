@@ -62,16 +62,22 @@ void Boss::onChildDestroyed()
 	cout << "소멸된 자식객체 갯수 " << childCount <<  endl;
 
 	if (childCount == 1)
-	{	
+	{
+		float px = getPx();
+		float py = getPy();
+
 		//보스 폭발 시키기
+		instantiate(new BossExp(px + 165, py -30), 1);
+
+		instantiate(new BossExp(px + 25,  py), 1);
+		instantiate(new BossExp(px + 305, py), 1);
+
+		instantiate(new BossExp(px + 165, py+70), 1);
 
 		//보스 제거하기
 		destroy(this); 
 
-		//폭발된 보스 객체(DeadBoss) 생성하기//
-		float px = getPx();
-		float py = getPy();
-
+		//폭발된 보스 객체(DeadBoss) 생성하기//		
 		instantiate(new DeadBoss(px+47, py+20), 0);
 	}
 }

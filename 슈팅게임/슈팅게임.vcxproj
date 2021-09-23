@@ -143,6 +143,7 @@
     <ClInclude Include="BMP.h" />
     <ClInclude Include="BombItem.h" />
     <ClInclude Include="Boss.h" />
+    <ClInclude Include="BossExp.h" />
     <ClInclude Include="BoxCollider2D.h" />
     <ClInclude Include="Cannon.h" />
     <ClInclude Include="DeadBoss.h" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Radar.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="ReturningPlayer.h" />
     <ClInclude Include="Shield.h" />
     <ClInclude Include="ShipExp.h" />
     <ClInclude Include="Sprite.h" />
@@ -183,6 +185,7 @@
     <ClCompile Include="BMP.cpp" />
     <ClCompile Include="BombItem.cpp" />
     <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="BossExp.cpp" />
     <ClCompile Include="BoxCollider2D.cpp" />
     <ClCompile Include="Cannon.cpp" />
     <ClCompile Include="DeadBoss.cpp" />
@@ -209,6 +212,7 @@
     <ClCompile Include="Propeller.cpp" />
     <ClCompile Include="Radar.cpp" />
     <ClCompile Include="Random.cpp" />
+    <ClCompile Include="ReturningPlayer.cpp" />
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="ShipExp.cpp" />
     <ClCompile Include="Sprite.cpp" />

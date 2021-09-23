@@ -50,6 +50,8 @@
 #include "Cannon.h"
 #include "Radar.h"
 #include "DeadBoss.h"
+#include "BossExp.h"
+#include "ReturningPlayer.h"
 
 #define WIDTH  480
 #define HEIGHT 800
