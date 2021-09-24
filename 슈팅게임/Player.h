@@ -48,4 +48,7 @@ public:
 
 	//플레이어 폭발 함수//
 	void explode();
+
+	//보스가 죽었음을..알려주는 이벤트 함수//
+	void onBossDestroyed();
 };

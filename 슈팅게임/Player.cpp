@@ -1,6 +1,6 @@
 #include "framework.h"
 
-Player::Player(float px, float py) : GameObject("플레이어","", true, px, py)
+Player::Player(float px, float py) : GameObject("플레이어","플레이어", true, px, py)
 {	
 	this->speed = 200; //플레이어 이동 속력
 
@@ -77,6 +77,33 @@ void Player::update()
 
 		break;
 	}
+
+	//보스가 죽었는지...체크하기//
+	/**
+	if (GameManager::getBossDead() == true)
+	{		
+		//귀환플레이어..생성함
+		float px = getPx();
+		float py = getPy();
+
+		instantiate(new ReturningPlayer(px, py), 1);
+
+		//플레이어를 제거
+		destroy(this);
+	}
+	**/
+}
+
+void Player::onBossDestroyed()
+{
+	//귀환플레이어..생성함
+	float px = getPx();
+	float py = getPy();
+
+	instantiate(new ReturningPlayer(px, py), 1);
+
+	//플레이어를 제거
+	destroy(this);
 }
 
 void Player::draw()

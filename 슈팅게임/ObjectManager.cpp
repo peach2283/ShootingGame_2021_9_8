@@ -146,3 +146,21 @@ void ObjectManager::clear()
 		gameObject[layer].clear();
 	}
 }
+
+GameObject* ObjectManager::find(string name)
+{
+	for (int layer = 0; layer < MAX_LAYER; layer++)
+	{
+		for (int i = 0; i < gameObject[layer].size(); i++)
+		{
+			GameObject* o = gameObject[layer][i];
+
+			if (o->getName() == name)
+			{
+				return o;
+			}
+		}
+	}
+
+	return nullptr;
+}

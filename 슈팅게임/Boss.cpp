@@ -79,5 +79,19 @@ void Boss::onChildDestroyed()
 
 		//폭발된 보스 객체(DeadBoss) 생성하기//		
 		instantiate(new DeadBoss(px+47, py+20), 0);
+
+		//보스가..죽었음 게임매니저 공유 변수에..표시
+		//GameManager::setBossDead();
+
+		//플레이어를 찾아서..보스가 죽었음을..직접 알려줌
+		Player * player =(Player *) ObjectManager::find("플레이어");
+
+		if (player != nullptr)
+		{
+			player->onBossDestroyed();
+		}
+		else {
+			cout << "===플레이어 객체를 찾지 못함===" << endl;
+		}
 	}
 }

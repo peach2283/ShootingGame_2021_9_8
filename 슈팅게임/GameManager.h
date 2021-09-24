@@ -10,7 +10,8 @@ private:
 	static bool dropLaserItem[ENEMY_MAX];
 	static bool dropBombItem [ENEMY_MAX];
 
-	static int playerCount;
+	static int  playerCount;
+	static bool bossDead;    //true - 보스가 죽음, false- 보스가 죽지 않음
 
 public:
 
@@ -30,4 +31,8 @@ public:
 
 	//플레이어 스폰하기
 	static void playerSpawn(float px, float py);
+
+	//보스데드 공유 변수..게터/세터
+	static bool getBossDead();
+	static void setBossDead();
 };

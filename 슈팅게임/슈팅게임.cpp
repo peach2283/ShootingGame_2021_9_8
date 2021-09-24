@@ -57,7 +57,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     ObjectManager::instantiate(new Boss(-6.5, 100), 0);
 
     //귀환플레이어 테스트//
-    ObjectManager::instantiate(new ReturningPlayer(200, 300), 0);
+    //ObjectManager::instantiate(new ReturningPlayer(200, 300), 0);
 
     // 기본 메시지 루프입니다:
     while (msg.message != WM_QUIT)

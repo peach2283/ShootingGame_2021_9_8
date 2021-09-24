@@ -32,4 +32,7 @@ public:
 
 	//목록에..추가된 객체..모두 제거 함수//
 	static void clear();
+
+	//오브젝트..목록에서..이름으로 객체 찾기
+	static GameObject* find(string name);
 };
