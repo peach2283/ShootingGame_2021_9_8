@@ -6,12 +6,17 @@ class Gun : public Sprite
 {
 private:
 	float hp;
+
+	//float fireTimer;
+	//float fireDelay;
+
 public:
-	Gun(float px, float py);
+	Gun(string name, float px, float py);
 	~Gun();
 
 	void start();
-	void onTriggerStay(GameObject* other);
+	void update();
 
+	void onTriggerStay(GameObject* other);
 	void explode();
 };

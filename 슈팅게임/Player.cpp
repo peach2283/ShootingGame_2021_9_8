@@ -287,7 +287,7 @@ void Player::onTriggerStay(GameObject* other)
 {	
 	string tag = other->getTag();
 
-	if (tag == "적기")
+	if (tag == "적기" || tag=="보스")
 	{
 		explode();
 	}

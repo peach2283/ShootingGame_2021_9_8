@@ -32,11 +32,16 @@ void Shield::onTriggerStay(GameObject* other)
 		instantiate(new EnemyBulletExp(ex - 10, ey), 1);
 	}
 	else if (tag == "적기")
-	{	
+	{
 		float px = other->getPx();
 		float py = other->getPy();
 
 		instantiate(new ShipExp(px + 30, py + 20), 1); //적기폭발효과
 		destroy(other);						           //적기제거
+	}
+	else if (tag == "보스")
+	{
+	    //보호방패 제거하기//
+		setActive(false);
 	}
 }

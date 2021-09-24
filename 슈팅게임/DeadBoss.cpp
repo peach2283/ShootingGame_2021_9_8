@@ -28,8 +28,5 @@ void DeadBoss::update()
 	{
 		//보스 객체 제거//
 		destroy(this);
-
-		//스테이지 클리어//
-		cout << "====스테이지 클리어====" << endl;
 	}
 }

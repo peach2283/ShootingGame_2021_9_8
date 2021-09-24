@@ -20,4 +20,14 @@ void ReturningPlayer::update()
 {
 	float dist = speed * Time::deltaTime;
 	translate(0, -dist);
+
+	//기지 귀환완료 / 스테이지 클리어 하기//
+	if (getPy() < 0)
+	{
+		//귀환 플레이어 제거
+		destroy(this);
+
+		//스테이지 클리어//
+		cout << "====스테이지 클리어====" << endl;
+	}
 }

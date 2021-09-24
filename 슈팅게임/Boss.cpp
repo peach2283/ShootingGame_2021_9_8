@@ -14,7 +14,6 @@ void Boss::start()
 	setImage("Asset/보스.bmp", 0, 0, 493, 206);
 
 	//**************보스 자식객체 추가하기***************//
-
 	//프로펠러 자식객체
 	addChildObject(new Propeller(63,  41), 0);
 	addChildObject(new Propeller(111, 41), 0);
@@ -36,15 +35,15 @@ void Boss::start()
 	addChildObject(new Wing(299, 406, 32, 16,	   62, 85), 0);  //왼쪽  네번째
 
 	//날개위 건 자식객체
-	addChildObject(new Gun(94,  71), 0);
-	addChildObject(new Gun(142, 71), 0);
-	addChildObject(new Gun(190, 71), 0);
+	addChildObject(new Gun("건1", 94,  71), 0); //건1
+	addChildObject(new Gun("건2", 142, 71), 0); //건2
+	addChildObject(new Gun("건3", 190, 71), 0); //건3
 
-	addChildObject(new Gun(238, 63), 0);
+	addChildObject(new Gun("건4", 238, 63), 0); //건4
 
-	addChildObject(new Gun(286, 71), 0);
-	addChildObject(new Gun(334, 71), 0);
-	addChildObject(new Gun(382, 71), 0);
+	addChildObject(new Gun("건5", 286, 71), 0); //건5
+	addChildObject(new Gun("건6", 334, 71), 0); //건6
+	addChildObject(new Gun("건7", 382, 71), 0); //건7
 
 	//날개아래 대포 자식객체
 	addChildObject(new Cannon(265 + 5, 97 + 10), 0);
@@ -53,6 +52,11 @@ void Boss::start()
 	//레이더 자식객체
 	addChildObject(new Radar(241, 105), 0);
 	addChildObject(new Radar(241, 117), 0);
+
+	//보스 전체...충돌체//
+	addBoxCollider2D(230,  10, 33,  160);
+	addBoxCollider2D(10,   60, 473, 40);
+	addBoxCollider2D(190, 170, 113, 30);
 }
 
 void Boss::onChildDestroyed()
@@ -61,6 +65,7 @@ void Boss::onChildDestroyed()
 
 	cout << "소멸된 자식객체 갯수 " << childCount <<  endl;
 
+	//if (childCount == 25)
 	if (childCount == 1)
 	{
 		float px = getPx();
