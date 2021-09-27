@@ -152,6 +152,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyBullet.h" />
     <ClInclude Include="EnemyBulletExp.h" />
+    <ClInclude Include="EnemyShell.h" />
     <ClInclude Include="EnemySpawner.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GameBG.h" />
@@ -194,6 +195,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyBullet.cpp" />
     <ClCompile Include="EnemyBulletExp.cpp" />
+    <ClCompile Include="EnemyShell.cpp" />
     <ClCompile Include="EnemySpawner.cpp" />
     <ClCompile Include="GameBG.cpp" />
     <ClCompile Include="GameManager.cpp" />

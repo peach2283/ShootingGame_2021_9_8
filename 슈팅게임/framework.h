@@ -52,6 +52,7 @@
 #include "DeadBoss.h"
 #include "BossExp.h"
 #include "ReturningPlayer.h"
+#include "EnemyShell.h"
 
 #define WIDTH  480
 #define HEIGHT 800

@@ -14,17 +14,16 @@ private:
 	float fireDelay;
 
 	//보스건 자식객체의...발사 여부 배열
-	bool gunFire[7][MAX_GUN_FIRE] = {  { true, true, false, true, true,      false, true, true, false,    true, true, false, true, true,      false, true, true, false  },  //건1
-										{ true, true, false, true, true,      false, true, true, false,    true, true, false, true, true,      false, true, true, false  },  //건2
-										{ true, true, false, true, true,      false, true, true, false,    true, true, false, true, true,      false, true, true, false  },  //건3
+	bool gunFire[7][MAX_GUN_FIRE] = {   { true, true,  false, false, false,    false, true, true, false,    false, false, false, true, true,     false, false, false, false  },  //건1
+										{ true, true,  false, false, false,    false, true, true, false,    false, false, false, true, true,     false, false, false, false  },  //건2
+										{ true, true,  false, false, false,    false, true, true, false,    false, false, false, true, true,     false, false, false, false  },  //건3
 
-										{ true, true, false, true, true,      false, true, true, false,    true, true, false, true, true,      false, true, true, false  },  //건4
+										{ true, true,  false, true, true,      false, true, true, false,     true, true, false, true, true,      false, true, true, false  },  //건4
 
-										{ true, true, false, true, true,      false, true, true, false,    true, true, false, true, true,      false, true, true, false  },  //건5
-										{ true, true, false, true, true,      false, true, true, false,    true, true, false, true, true,      false, true, true, false  },  //건6
-										{ true, true, false, true, true,      false, true, true, false,    true, true, false, true, true,      false, true, true, false  },  //건7
+										{ false, false, false, true, true,     false, false, false, false,   true, true, false, false, false,     false, true, true, false  },  //건5
+										{ false, false, false, true, true,     false, false, false, false,   true, true, false, false, false,     false, true, true, false  },  //건6
+										{ false, false, false, true, true,     false, false, false, false,   true, true, false, false, false,     false, true, true, false  },  //건7
 									 };
-
 	int gunFireIndex;
 
 public:
