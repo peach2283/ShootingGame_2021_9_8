@@ -3,6 +3,10 @@
 Boss::Boss(float px, float py) :Sprite("보스", "", true, px, py)
 {
 	this->childCount = 0;
+
+	this->fireTimer		= 0;
+	this->fireDelay		= 0.2;
+	this->gunFireIndex	= 0;
 }
 
 Boss::~Boss()
@@ -59,6 +63,40 @@ void Boss::start()
 	addBoxCollider2D(190, 170, 113, 30);
 }
 
+void Boss::update()
+{
+	//건발사하기
+	fireTimer = fireTimer + Time::deltaTime;
+
+	if (fireTimer >= fireDelay)
+	{
+		//자식건 찾기
+		string name[7] = {"건1", "건2", "건3", "건4", "건5", "건6", "건7"};
+
+		for (int i = 0; i < 7; i++)
+		{	
+			if (gunFire[i][gunFireIndex] == true)  //건배열에서..발사로..지정(true)되어 있으면..
+			{
+				Gun* gun = (Gun*)find(name[i]);
+
+				if (gun != nullptr)
+				{
+					gun->onFire();
+				}
+			}
+		}
+		
+		fireTimer = 0;
+
+		gunFireIndex++;  //건배열의..발사인덱스 증가
+
+		if (gunFireIndex >= MAX_GUN_FIRE)
+		{
+			gunFireIndex = 0;  //건배열의..처음부터 다시 발사 패턴시작
+		}
+	}
+}
+
 void Boss::onChildDestroyed()
 {
 	childCount++;
@@ -66,7 +104,7 @@ void Boss::onChildDestroyed()
 	cout << "소멸된 자식객체 갯수 " << childCount <<  endl;
 
 	//if (childCount == 25)
-	if (childCount == 1)
+	if (childCount == 25)
 	{
 		float px = getPx();
 		float py = getPy();

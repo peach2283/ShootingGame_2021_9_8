@@ -32,6 +32,14 @@ void Gun::update()
 	//}
 }
 
+void Gun::onFire()
+{
+	float px = getPx();
+	float py = getPy();
+
+	instantiate(new EnemyBullet(px+1, py+20), 0);
+}
+
 void Gun::onTriggerStay(GameObject* other)
 {
 	string tag = other->getTag();
