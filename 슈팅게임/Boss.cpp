@@ -50,8 +50,8 @@ void Boss::start()
 	addChildObject(new Gun("건7", 382, 71), 0); //건7
 
 	//날개아래 대포 자식객체
-	addChildObject(new Cannon(265 + 5, 97 + 10), 0);
-	addChildObject(new Cannon(206 - 5, 97 + 10), 0);
+	addChildObject(new Cannon("대포1", 265 + 5, 97 + 10), 0); //대포1
+	addChildObject(new Cannon("대포2", 206 - 5, 97 + 10), 0); //대포2
 
 	//레이더 자식객체
 	addChildObject(new Radar(241, 105), 0);
@@ -65,6 +65,7 @@ void Boss::start()
 
 void Boss::update()
 {
+	/***
 	//건발사하기
 	fireTimer = fireTimer + Time::deltaTime;
 
@@ -94,6 +95,28 @@ void Boss::update()
 		{
 			gunFireIndex = 0;  //건배열의..처음부터 다시 발사 패턴시작
 		}
+	}
+	**/
+
+	//대포 발사하기
+	fireTimer = fireTimer + Time::deltaTime;
+
+	if (fireTimer >= fireDelay)
+	{
+		//자식대포 찾기
+		string name[2] = { "대포1", "대포2" };
+
+		for (int i = 0; i < 2; i++)
+		{
+			Cannon* cannon = (Cannon*)find(name[i]);
+
+			if (cannon != nullptr)
+			{
+				cannon->onFire();
+			}
+		}
+
+		fireTimer = 0;
 	}
 }
 

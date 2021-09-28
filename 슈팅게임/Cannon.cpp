@@ -1,6 +1,6 @@
 #include "framework.h"
 
-Cannon::Cannon(float px, float py) : Sprite("","",true, px, py)
+Cannon::Cannon(string name, float px, float py) : Sprite("",name,true, px, py)
 {
 	this->hp = 100;
 }
@@ -57,4 +57,16 @@ void Cannon::explode()
 	//부모 보스객체에...제거되었음을 알려줌
 	Boss* boss = (Boss*)getParent();
 	boss->onChildDestroyed();
+}
+
+void Cannon::onFire()
+{
+	//포탄 발사하기//
+	float px = getPx();
+	float py = getPy();
+
+	for (int i = 0; i < 36; i++)
+	{
+		instantiate(new EnemyShell(i*10, px, py + 20), 0);  
+	}	
 }

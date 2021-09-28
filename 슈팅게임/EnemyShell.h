@@ -6,8 +6,12 @@ class EnemyShell : public Sprite
 {
 private:
 	float speed;
+	float angle;
+
+	float lifeTime;
+
 public:
-	EnemyShell(float px, float py);
+	EnemyShell(float angle, float px, float py);
 	~EnemyShell();
 
 	void start();
