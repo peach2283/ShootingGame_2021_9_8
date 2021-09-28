@@ -54,7 +54,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     GameManager::playerSpawn(240 - 40, HEIGHT + 50);
     
     //보스 테스트하기//
-    ObjectManager::instantiate(new Boss(-6.5, 100), 0);
+    ObjectManager::instantiate(new Boss(-6.5, -200), 0);
 
     //보스포탄 테스트//
     //ObjectManager::instantiate(new EnemyShell(200, 300), 0);

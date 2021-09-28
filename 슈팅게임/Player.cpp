@@ -291,7 +291,7 @@ void Player::onTriggerStay(GameObject* other)
 	{
 		explode();
 	}
-	else if (tag == "적기총알")
+	else if (tag == "적기총알" || tag == "적기포탄")
 	{
 		//플레이어 체력 감소
 		hp = hp - 10;

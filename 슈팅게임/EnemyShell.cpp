@@ -17,6 +17,7 @@ EnemyShell::~EnemyShell()
 void EnemyShell::start()
 {
 	setImage("Asset/ÃÑ¾Ë2.bmp");
+	addBoxCollider2D(0, 0, 17, 17);
 }
 
 void EnemyShell::update()

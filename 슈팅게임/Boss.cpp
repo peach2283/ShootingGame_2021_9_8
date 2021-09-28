@@ -4,9 +4,16 @@ Boss::Boss(float px, float py) :Sprite("보스", "", true, px, py)
 {
 	this->childCount = 0;
 
-	this->fireTimer		= 0;
-	this->fireDelay		= 0.2;
+	this->gunFireTimer	= 0;
+	this->gunFireDelay	= 0.2;
 	this->gunFireIndex	= 0;
+
+	this->cannonFireTimer = 0;
+	this->cannonFireDelay = 0.5;
+	this->cannonFireIndex = 0;
+
+	this->speed = 50;
+	this->state = State::moveDown;
 }
 
 Boss::~Boss()
@@ -65,11 +72,30 @@ void Boss::start()
 
 void Boss::update()
 {
-	/***
-	//건발사하기
-	fireTimer = fireTimer + Time::deltaTime;
+	switch (state)
+	{	
+		case State::moveDown :
+		{
+			//이동하기
+		}
+		break;
 
-	if (fireTimer >= fireDelay)
+		case State::attack :
+		{
+			//공격하기
+		}
+		break;
+	}
+
+	/*******************************************
+	//이동하기
+	float dist = speed * Time::deltaTime;
+	translate(0, dist);
+
+	//건발사하기
+	gunFireTimer = gunFireTimer + Time::deltaTime;
+
+	if (gunFireTimer >= gunFireDelay)
 	{
 		//자식건 찾기
 		string name[7] = {"건1", "건2", "건3", "건4", "건5", "건6", "건7"};
@@ -87,8 +113,7 @@ void Boss::update()
 			}
 		}
 		
-		fireTimer = 0;
-
+		gunFireTimer = 0;
 		gunFireIndex++;  //건배열의..발사인덱스 증가
 
 		if (gunFireIndex >= MAX_GUN_FIRE)
@@ -96,28 +121,37 @@ void Boss::update()
 			gunFireIndex = 0;  //건배열의..처음부터 다시 발사 패턴시작
 		}
 	}
-	**/
 
 	//대포 발사하기
-	fireTimer = fireTimer + Time::deltaTime;
+	cannonFireTimer = cannonFireTimer + Time::deltaTime;
 
-	if (fireTimer >= fireDelay)
+	if (cannonFireTimer >= cannonFireDelay)
 	{
 		//자식대포 찾기
 		string name[2] = { "대포1", "대포2" };
 
 		for (int i = 0; i < 2; i++)
 		{
-			Cannon* cannon = (Cannon*)find(name[i]);
-
-			if (cannon != nullptr)
+			if (cannonFire[i][cannonFireIndex] == true)
 			{
-				cannon->onFire();
+				Cannon* cannon = (Cannon*)find(name[i]);
+
+				if (cannon != nullptr)
+				{
+					cannon->onFire();
+				}
 			}
 		}
 
-		fireTimer = 0;
+		cannonFireTimer = 0;
+		cannonFireIndex++;
+
+		if (cannonFireIndex >= MAX_CANNON_FIRE)
+		{
+			cannonFireIndex = 0;
+		}
 	}
+	*****************************************/
 }
 
 void Boss::onChildDestroyed()

@@ -20,7 +20,7 @@ void Shield::onTriggerStay(GameObject* other)
 {
 	string tag = other->getTag();
 
-	if (tag == "적기총알")
+	if (tag == "적기총알" || tag == "적기포탄")
 	{
 		//적기 총알제하기
 		destroy(other);

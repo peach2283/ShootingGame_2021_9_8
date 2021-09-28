@@ -25,7 +25,7 @@ void PlayerBombExp::onTriggerStay(GameObject* other)
 {
 	string tag = other->getTag();
 
-	if (tag == "적기총알")
+	if (tag == "적기총알" || tag == "적기포탄")
 	{
 		destroy(other); //총알객체 제거
 	}
