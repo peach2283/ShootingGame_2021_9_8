@@ -21,4 +21,9 @@ public:
 	static bool getKeyDown(string keyName);
 	static bool getKeyUp  (string keyName);
 	static bool getKey    (string keyName);
+
+	//마우스버튼 검사 함수
+	static bool getMouseButtonDown(int id);  //id 0 은 왼쪽버튼, 1 은 오른쪽 버튼 2 는 가운데버튼
+	static bool getMouseButtonUp(int id);
+	static bool getMouseButton(int id);
 };

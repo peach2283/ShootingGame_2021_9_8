@@ -31,6 +31,12 @@
     <Filter Include="헤더 파일\어플리케이션">
       <UniqueIdentifier>{9c54db4c-7097-4dfd-8837-f3b8a84999d2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\UI">
+      <UniqueIdentifier>{a8203b3e-f147-417a-a9c4-4cc4758aead1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\UI">
+      <UniqueIdentifier>{cecc3454-b106-47c8-a600-974d3d4d6726}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -156,6 +162,9 @@
     <ClInclude Include="슈팅게임.h">
       <Filter>헤더 파일\어플리케이션</Filter>
     </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>헤더 파일\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp">
@@ -271,6 +280,9 @@
     </ClCompile>
     <ClCompile Include="슈팅게임.cpp">
       <Filter>소스 파일\어플리케이션</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>소스 파일\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

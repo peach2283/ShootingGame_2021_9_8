@@ -53,11 +53,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     //플레이어 스폰하기//
     GameManager::playerSpawn(240 - 40, HEIGHT + 50);
     
-    //보스 테스트하기//
-    //ObjectManager::instantiate(new Boss(-6.5, -200), 0);
-
-    //보스포탄 테스트//
-    //ObjectManager::instantiate(new EnemyShell(200, 300), 0);
+    //버튼..클래스 테스트 하기
+    ObjectManager::instantiate(new Button(120, 300), UI_LAYER);
 
     // 기본 메시지 루프입니다:
     while (msg.message != WM_QUIT)
