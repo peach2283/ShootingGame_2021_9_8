@@ -44,6 +44,9 @@ private:
 	//보스 상태 변수
 	State state;
 
+	//보스 이동정지  위치(공격시작 지점)
+	float attackPos; //이동정지하고 공격시작 위치
+
 public:
 	Boss(float px, float py);
 	~Boss();
@@ -53,4 +56,13 @@ public:
 
 	//자식객체가..제거되었음을 알려주는 이벤트 함수//
 	void onChildDestroyed();
+
+	//이동하기
+	void move();
+
+	//건발사
+	void bulletFire();
+
+	//대포발사
+	void shellFire();
 };

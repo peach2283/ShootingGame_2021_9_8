@@ -14,6 +14,8 @@ Boss::Boss(float px, float py) :Sprite("보스", "", true, px, py)
 
 	this->speed = 50;
 	this->state = State::moveDown;
+
+	this->attackPos = 60;
 }
 
 Boss::~Boss()
@@ -77,31 +79,50 @@ void Boss::update()
 		case State::moveDown :
 		{
 			//이동하기
+			move();
+
+			//건발사하기
+			bulletFire();
+
+			//중지하고 공격상태 전이 조건검사
+			int py = getPy();
+
+			if (py >= attackPos)
+			{
+				state = State::attack;
+			}
 		}
 		break;
 
 		case State::attack :
 		{
 			//공격하기
+			bulletFire();
+			shellFire();
 		}
 		break;
 	}
+}
 
-	/*******************************************
+void Boss::move()
+{
 	//이동하기
 	float dist = speed * Time::deltaTime;
 	translate(0, dist);
+}
 
+void Boss::bulletFire()
+{
 	//건발사하기
 	gunFireTimer = gunFireTimer + Time::deltaTime;
 
 	if (gunFireTimer >= gunFireDelay)
 	{
 		//자식건 찾기
-		string name[7] = {"건1", "건2", "건3", "건4", "건5", "건6", "건7"};
+		string name[7] = { "건1", "건2", "건3", "건4", "건5", "건6", "건7" };
 
 		for (int i = 0; i < 7; i++)
-		{	
+		{
 			if (gunFire[i][gunFireIndex] == true)  //건배열에서..발사로..지정(true)되어 있으면..
 			{
 				Gun* gun = (Gun*)find(name[i]);
@@ -112,7 +133,7 @@ void Boss::update()
 				}
 			}
 		}
-		
+
 		gunFireTimer = 0;
 		gunFireIndex++;  //건배열의..발사인덱스 증가
 
@@ -121,7 +142,10 @@ void Boss::update()
 			gunFireIndex = 0;  //건배열의..처음부터 다시 발사 패턴시작
 		}
 	}
+}
 
+void Boss::shellFire()
+{
 	//대포 발사하기
 	cannonFireTimer = cannonFireTimer + Time::deltaTime;
 
@@ -151,7 +175,6 @@ void Boss::update()
 			cannonFireIndex = 0;
 		}
 	}
-	*****************************************/
 }
 
 void Boss::onChildDestroyed()

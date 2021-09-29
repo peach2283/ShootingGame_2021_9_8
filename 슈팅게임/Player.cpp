@@ -273,7 +273,7 @@ void Player::fire()
 
 			instantiate(new PlayerBomb(px + 15, py), 0);
 
-			bombCount--; //ÆøÅº°¹¼ö ÁÙÀÌ±â
+			//bombCount--; //ÆøÅº°¹¼ö ÁÙÀÌ±â
 		}
 		else {
 			cout << "---³²¾ÆÀÖ´Â ÆøÅºÀÌ ¾ø½À´Ï´Ù---" << endl;
