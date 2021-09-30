@@ -49,3 +49,9 @@ void Sprite::setEnabled(bool enabled)
 {
 	this->enabled = enabled;
 }
+
+void Sprite::getSize(int& width, int& height)
+{
+	width  = image.width;
+	height = image.height;
+}

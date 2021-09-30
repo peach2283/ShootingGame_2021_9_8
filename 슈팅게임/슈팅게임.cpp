@@ -148,6 +148,26 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
     {   
+    //마우스 좌표//
+    case WM_LBUTTONUP:
+    case WM_LBUTTONDOWN:
+
+    case WM_RBUTTONUP:
+    case WM_RBUTTONDOWN:
+
+    case WM_MBUTTONUP:
+    case WM_MBUTTONDOWN:
+
+    case WM_MOUSEMOVE:
+        {
+            short mx = LOWORD(lParam);  //하위 2바이트
+            short my = HIWORD(lParam);  //상위 2바이트
+            
+            Input::mousePosition.x = (float) mx;
+            Input::mousePosition.y = (float) my;            
+        }
+        break;
+
     case WM_PAINT:
         {
             PAINTSTRUCT ps;
@@ -158,9 +178,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             EndPaint(hWnd, &ps);
         }
         break;
+
     case WM_DESTROY:
         PostQuitMessage(0);
         break;
+
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);
     }

@@ -4,6 +4,12 @@
 
 using namespace std;
 
+struct MousePosition
+{
+	float x;
+	float y;
+};
+
 class Input
 {
 	enum class State { keyUpRep = 0, keyDown = 1, keyDownRep = 2, keyUp = 3 }; //0-놓고 있음, 1-한번 누름 2-누르고 있음, 3-한번놓음
@@ -26,4 +32,7 @@ public:
 	static bool getMouseButtonDown(int id);  //id 0 은 왼쪽버튼, 1 은 오른쪽 버튼 2 는 가운데버튼
 	static bool getMouseButtonUp(int id);
 	static bool getMouseButton(int id);
+
+	//마우스좌표
+	static MousePosition mousePosition;
 };

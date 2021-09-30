@@ -4,6 +4,8 @@ Input::State  Input::state[9] = { State::keyUpRep, State::keyUpRep,State::keyUpR
 int			  Input::key[9]   = { VK_LBUTTON     , VK_RBUTTON     , VK_MBUTTON    ,  VK_LEFT      , VK_RIGHT       , VK_UP         , VK_DOWN        , VK_SPACE       , 'Z' };
 string		  Input::name[9]  = { "lbutton"      , "rbuttom"      , "mbutton",       "left",           "right",       "up"         ,  "down"        , "space",         "z" };
 
+MousePosition Input::mousePosition = { 0,0 };
+
 void Input::update()
 {
 	//키배열의...상태업데이트
@@ -121,4 +123,19 @@ bool Input::getKey(string keyName)
 	}
 
 	return false; //이름 배열에..키 이름이 없는 경우 (무조건 안눌림)
+}
+
+bool Input::getMouseButtonDown(int id)
+{
+	return getKeyDown(name[id]);
+}
+
+bool Input::getMouseButtonUp(int id)
+{
+	return getKeyUp(name[id]);
+}
+
+bool Input::getMouseButton(int id)
+{
+	return getKey(name[id]);
 }

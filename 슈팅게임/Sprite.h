@@ -22,4 +22,7 @@ public:
 	//enabled 게터/세터
 	bool getEnabled();
 	void setEnabled(bool enabled);
+
+	//그림의 크기 구하기//
+	void getSize(int &width, int &height);
 };
