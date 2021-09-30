@@ -54,6 +54,7 @@
 #include "ReturningPlayer.h"
 #include "EnemyShell.h"
 #include "Button.h"
+#include "BTNExit.h"
 
 #define WIDTH  480
 #define HEIGHT 800

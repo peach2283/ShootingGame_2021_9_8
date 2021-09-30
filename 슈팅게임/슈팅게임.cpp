@@ -54,7 +54,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     GameManager::playerSpawn(240 - 40, HEIGHT + 50);
     
     //버튼..클래스 테스트 하기
-    ObjectManager::instantiate(new Button(120, 300), UI_LAYER);
+    //ObjectManager::instantiate(new Button(120, 300), UI_LAYER);
 
     // 기본 메시지 루프입니다:
     while (msg.message != WM_QUIT)
