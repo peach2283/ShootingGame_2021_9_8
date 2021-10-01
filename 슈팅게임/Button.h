@@ -17,4 +17,7 @@ public:
 	void update();
 
 	bool isMouseInImageRect();
+
+	//클릭 이벤트 가상함수//
+	virtual void onClick();
 };

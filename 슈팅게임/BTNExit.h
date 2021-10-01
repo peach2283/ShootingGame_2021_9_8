@@ -10,4 +10,7 @@ public:
 	~BTNExit();
 
 	void start();
+
+	//클릭이벤트..오버라이딩//
+	void onClick();
 };

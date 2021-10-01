@@ -31,8 +31,8 @@ void Button::update()
 		case State::pressed:
 		{
 			if (Input::getMouseButtonUp(0) == true && isMouseInImageRect() == true)
-			{							
-				cout << "==== 이미지 버튼이 클릭됨 ====" << endl;
+			{											
+				onClick();  //클릭 가상함수..실행
 
 				translate(0, -1);
 				state = State::normal; //놓임(정상)상태로..전이
@@ -74,3 +74,6 @@ bool Button::isMouseInImageRect()
 		return false;
 	}
 }
+
+void Button::onClick()
+{}

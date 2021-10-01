@@ -53,11 +53,12 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     //플레이어 스폰하기//
     GameManager::playerSpawn(240 - 40, HEIGHT + 50);
     
-    //버튼..클래스 테스트 하기
-    //ObjectManager::instantiate(new Button(120, 300), UI_LAYER);
+    //UI 객체...추가하기//
+    ObjectManager::instantiate(new BTNExit (420, 5), UI_LAYER);
+    ObjectManager::instantiate(new BTNPause(370, 5), UI_LAYER);
 
     // 기본 메시지 루프입니다:
-    while (msg.message != WM_QUIT)
+    while (msg.message != WM_QUIT && Application::getIsPlaying() == true)
     {   
         //윈도우..동작..//
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE) == TRUE)
@@ -80,7 +81,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
          render();
     }
-
+  
     //종료
     STOP_DEBUG_CONSOLE();
     exitGraphic();

@@ -55,6 +55,8 @@
 #include "EnemyShell.h"
 #include "Button.h"
 #include "BTNExit.h"
+#include "BTNPause.h"
+#include "Application.h"
 
 #define WIDTH  480
 #define HEIGHT 800
