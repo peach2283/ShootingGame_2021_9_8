@@ -16,7 +16,8 @@ bool GameManager::dropBombItem[ENEMY_MAX] =  { false, false, false, false, true,
 
 int GameManager::playerCount = 3;
 
-bool GameManager::bossDead   = false;
+bool GameManager::bossDead  = false;
+bool GameManager::isPause   = false;
 
 void GameManager::addEnemy() //스폰에서..적기 카운트 증가
 {
@@ -70,4 +71,14 @@ bool GameManager::getBossDead()
 void GameManager::setBossDead()
 {
 	bossDead = true;  //보스가 죽었음을...공유 변수에..표시
+}
+
+bool GameManager::getPause()
+{
+	return isPause;
+}
+
+void GameManager::setPause(bool pause)
+{
+	isPause = pause;
 }

@@ -8,6 +8,7 @@ private:
 
 public:
 
+	static float timeScale;
 	static float deltaTime;
 
 	static void  init();

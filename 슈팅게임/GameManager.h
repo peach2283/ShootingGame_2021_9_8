@@ -13,6 +13,8 @@ private:
 	static int  playerCount;
 	static bool bossDead;    //true - 보스가 죽음, false- 보스가 죽지 않음
 
+	static bool isPause;     //true(일시중지), false(정상동작)
+
 public:
 
 	//적기카운트..증가 감소 함수//
@@ -35,4 +37,8 @@ public:
 	//보스데드 공유 변수..게터/세터
 	static bool getBossDead();
 	static void setBossDead();
+
+	//일시중지 변수(isPause)게터/세터
+	static bool getPause();
+	static void setPause(bool pause);
 };

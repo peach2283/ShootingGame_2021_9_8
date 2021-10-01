@@ -230,7 +230,7 @@ void Player::move()
 void Player::fire()
 {
 	//레이저 ... 발사하기//
-	if (Input::getKey("space") == true)
+	if (Input::getKey("space") == true && GameManager::getPause() == false)
 	{		
 		//발사시간 측정하기
 		fireTimer = fireTimer + Time::deltaTime;
@@ -264,7 +264,7 @@ void Player::fire()
 	}
 
 	//폭탄...발사하기//
-	if (Input::getKeyDown("z") == true)
+	if (Input::getKeyDown("z") == true && GameManager::getPause() == false)
 	{
 		if (bombCount > 0)
 		{
@@ -272,7 +272,7 @@ void Player::fire()
 			float py = getPy();
 
 			instantiate(new PlayerBomb(px + 15, py), 0);
-
+			
 			//bombCount--; //폭탄갯수 줄이기
 		}
 		else {
