@@ -173,6 +173,7 @@
     <ClInclude Include="PlayerBombExp.h" />
     <ClInclude Include="PlayerLaser.h" />
     <ClInclude Include="PlayerLaserExp.h" />
+    <ClInclude Include="PopupMenu.h" />
     <ClInclude Include="Propeller.h" />
     <ClInclude Include="Radar.h" />
     <ClInclude Include="Random.h" />
@@ -219,6 +220,7 @@
     <ClCompile Include="PlayerBombExp.cpp" />
     <ClCompile Include="PlayerLaser.cpp" />
     <ClCompile Include="PlayerLaserExp.cpp" />
+    <ClCompile Include="PopupMenu.cpp" />
     <ClCompile Include="Propeller.cpp" />
     <ClCompile Include="Radar.cpp" />
     <ClCompile Include="Random.cpp" />
