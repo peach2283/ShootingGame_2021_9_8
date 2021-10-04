@@ -183,6 +183,7 @@
     <ClInclude Include="ShipExp.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="UIManager.h" />
     <ClInclude Include="Wing.h" />
     <ClInclude Include="슈팅게임.h" />
   </ItemGroup>
@@ -228,6 +229,7 @@
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="ShipExp.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="Wing.cpp" />
     <ClCompile Include="슈팅게임.cpp" />
   </ItemGroup>

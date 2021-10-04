@@ -12,6 +12,7 @@ public:
 	~PopupMenu();
 
 	void start();
+	void update();
 };
 
 /////팝업메뉴..버튼 클래스들/////

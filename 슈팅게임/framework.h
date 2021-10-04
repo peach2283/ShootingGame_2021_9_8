@@ -58,6 +58,7 @@
 #include "BTNPause.h"
 #include "Application.h"
 #include "PopupMenu.h"
+#include "UIManager.h"
 
 #define WIDTH  480
 #define HEIGHT 800

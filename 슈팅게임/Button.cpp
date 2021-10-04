@@ -5,6 +5,11 @@ Button::Button(float px, float py) : Sprite("","", true, px, py)
 	this->state = State::normal;
 }
 
+Button::Button(float px, float py, bool active) : Sprite("", "", active, px, py)
+{
+	this->state = State::normal;
+}
+
 Button::~Button()
 {}
 

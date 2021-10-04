@@ -1,7 +1,7 @@
 #include "framework.h"
 
 /////////****************파업메뉴...클래스**********************///////
-PopupMenu::PopupMenu(float px, float py) : Sprite("","",true, px, py)
+PopupMenu::PopupMenu(float px, float py) : Sprite("","팝업메뉴",false, px, py)
 {}
 
 PopupMenu::~PopupMenu()
@@ -19,9 +19,19 @@ void PopupMenu::start()
 	addChildObject(new ItemExit   (17, 133), UI_LAYER);
 }
 
+void PopupMenu::update()
+{
+	if (GameManager::getPause() == true)
+	{
+		setActive(true); //메뉴 보이기
+	}
+	else {
+		setActive(false); //메뉴 숨기기
+	}
+}
 
 ///////****************이어하기 버튼****************///////////
-ItemResume::ItemResume(float px, float py) : Button(px, py)
+ItemResume::ItemResume(float px, float py) : Button(px, py, false)
 {}
 
 ItemResume::~ItemResume()
@@ -38,7 +48,7 @@ void ItemResume::onClick()
 }
 
 ///////****************다시하기 버튼****************///////////
-ItemRestart::ItemRestart(float px, float py) : Button(px, py)
+ItemRestart::ItemRestart(float px, float py) : Button(px, py, false)
 {}
 
 ItemRestart::~ItemRestart()
@@ -55,7 +65,7 @@ void ItemRestart::onClick()
 }
 
 ///////****************메인으로 버튼****************///////////
-ItemMain::ItemMain(float px, float py) : Button(px, py)
+ItemMain::ItemMain(float px, float py) : Button(px, py, false)
 {}
 
 ItemMain::~ItemMain()
@@ -72,7 +82,7 @@ void ItemMain::onClick()
 }
 
 ///////****************끝내기 버튼****************///////////
-ItemExit::ItemExit(float px, float py) : Button(px, py)
+ItemExit::ItemExit(float px, float py) : Button(px, py, false)
 {}
 
 ItemExit::~ItemExit()

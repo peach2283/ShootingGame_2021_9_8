@@ -21,7 +21,10 @@ void ObjectManager::update()
 	{
 		for (int i = 0; i < gameObject[layer].size(); i++)
 		{
-			gameObject[layer][i]->update();
+			if (gameObject[layer][i]->getActive() == true)
+			{
+				gameObject[layer][i]->update();
+			}
 		}
 	}
 }

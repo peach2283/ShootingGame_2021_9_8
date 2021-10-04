@@ -11,6 +11,7 @@ private:
 	
 public:
 	Button(float px, float py);
+	Button(float px, float py, bool active);
 	~Button();
 
 	void start();
