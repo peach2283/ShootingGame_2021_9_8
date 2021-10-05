@@ -163,6 +163,7 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameOver.h" />
+    <ClInclude Include="GameScene.h" />
     <ClInclude Include="graphic.h" />
     <ClInclude Include="Gun.h" />
     <ClInclude Include="Input.h" />
@@ -179,10 +180,14 @@
     <ClInclude Include="Random.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ReturningPlayer.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Shield.h" />
     <ClInclude Include="ShipExp.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TitleBG.h" />
+    <ClInclude Include="TitleMenu.h" />
+    <ClInclude Include="TitleScene.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="Wing.h" />
     <ClInclude Include="슈팅게임.h" />
@@ -211,6 +216,7 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="graphic.cpp" />
     <ClCompile Include="Gun.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -226,9 +232,13 @@
     <ClCompile Include="Radar.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="ReturningPlayer.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="ShipExp.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="TitleBG.cpp" />
+    <ClCompile Include="TitleMenu.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="Wing.cpp" />
     <ClCompile Include="슈팅게임.cpp" />

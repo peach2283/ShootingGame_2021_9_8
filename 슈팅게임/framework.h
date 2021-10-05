@@ -59,6 +59,10 @@
 #include "Application.h"
 #include "PopupMenu.h"
 #include "UIManager.h"
+#include "Scene.h"
+#include "TitleScene.h"
+#include "TitleBG.h"
+#include "GameScene.h"
 
 #define WIDTH  480
 #define HEIGHT 800

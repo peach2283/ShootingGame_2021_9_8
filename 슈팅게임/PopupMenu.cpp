@@ -45,6 +45,9 @@ void ItemResume::start()
 void ItemResume::onClick()
 {
 	cout << "---이어하기 버튼 클릭됨----" << endl;
+
+	GameManager::setPause(false);  //일시중지...해제
+	Time::timeScale = 1;           //타임스케일 지정
 }
 
 ///////****************다시하기 버튼****************///////////
