@@ -41,4 +41,7 @@ public:
 	//일시중지 변수(isPause)게터/세터
 	static bool getPause();
 	static void setPause(bool pause);
+
+	//게임매니저..데이타..리셋하기//
+	static void reset();
 };

@@ -8,6 +8,9 @@ GameScene::~GameScene()
 
 void GameScene::load()
 {
+    //게임매니저..리셋하기//
+    GameManager::reset();
+
     //...배경 및 초기 객체..추가하기//
     ObjectManager::instantiate(new GameBG(), 0);
     ObjectManager::instantiate(new EnemySpawner(WIDTH / 2, 10), 0);

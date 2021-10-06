@@ -64,10 +64,10 @@ void ItemRestart::start()
 
 void ItemRestart::onClick()
 {
-	cout << "---다시하기 버튼 클릭됨----" << endl;
+	SceneManager::loadScene("GameScene");
 }
 
-///////****************메인으로 버튼****************///////////
+///////****************메인(타이틀)으로 버튼****************///////////
 ItemMain::ItemMain(float px, float py) : Button(px, py, false)
 {}
 
@@ -81,7 +81,7 @@ void ItemMain::start()
 
 void ItemMain::onClick()
 {
-	cout << "---메인(타이틀)로 가기 버튼 클릭됨----" << endl;
+	SceneManager::loadScene("TitleScene");
 }
 
 ///////****************끝내기 버튼****************///////////

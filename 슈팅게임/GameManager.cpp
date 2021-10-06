@@ -82,3 +82,15 @@ void GameManager::setPause(bool pause)
 {
 	isPause = pause;
 }
+
+void GameManager::reset()
+{
+	//타이머 리셋//
+	Time::timeScale = 1.0f;
+
+	//게임관리 데이타 리셋//
+	enemyCount	= 0;
+	playerCount = 3;
+	bossDead = false;
+	isPause  = false;
+}
