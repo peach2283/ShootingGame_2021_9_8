@@ -43,12 +43,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     START_DEBUG_CONSOLE();                   //디버그 콘솔창 열기
     initGraphic(hWnd, 0, 0, WIDTH, HEIGHT);  //그래픽 초기화
 
-    Random::Init();   //랜덤 초기화
-    Time::init();     //타이머 초기화
-
-    //씬객체 생성하기 / 로딩
-    Scene* scene = new TitleScene();
-    scene->load();
+    Random::Init();         //랜덤 초기화
+    Time::init();           //타이머 초기화
+    SceneManager::init();   //씬매니저 초기화
 
     // 기본 메시지 루프입니다:
     while (msg.message != WM_QUIT && Application::getIsPlaying() == true)
@@ -63,18 +60,15 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
          //게임..동작..//
          clear(0, 0, 0);
 
-         Time::update();  //델타타임 업데이트
-         Input::update(); //키상태   업데이트
-
-         scene->run();    //씬구동하기
+         Time::update();        //델타타임 업데이트
+         Input::update();       //키상태   업데이트
+         SceneManager::run();   //씬구동하기
 
          render();
     }
   
-    //씬 언로딩
-    scene->unload();
-
     //종료
+    SceneManager::unload();
     STOP_DEBUG_CONSOLE();
     exitGraphic();
 

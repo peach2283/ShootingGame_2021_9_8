@@ -181,6 +181,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ReturningPlayer.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Shield.h" />
     <ClInclude Include="ShipExp.h" />
     <ClInclude Include="Sprite.h" />
@@ -233,6 +234,7 @@
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="ReturningPlayer.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="ShipExp.cpp" />
     <ClCompile Include="Sprite.cpp" />

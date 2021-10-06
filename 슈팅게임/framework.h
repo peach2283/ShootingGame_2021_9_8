@@ -63,6 +63,8 @@
 #include "TitleScene.h"
 #include "TitleBG.h"
 #include "GameScene.h"
+#include "TitleMenu.h"
+#include "SceneManager.h"
 
 #define WIDTH  480
 #define HEIGHT 800

@@ -1,7 +1,9 @@
 #include "framework.h"
 
-Scene::Scene()
-{}
+Scene::Scene(string name)
+{
+    this->name = name;
+}
 
 Scene::~Scene()
 {}
@@ -22,4 +24,9 @@ void Scene::run()     //¾À(¸Ê) ±¸µ¿
 void Scene::unload()  //¾À(¸Ê)¾ð·Îµù
 {
     ObjectManager::clear();
+}
+
+string Scene::getName()
+{
+    return name;
 }

@@ -1,6 +1,6 @@
 #include "framework.h"
 
-GameScene::GameScene() : Scene()
+GameScene::GameScene() : Scene("GameScene")
 {}
 
 GameScene::~GameScene()
