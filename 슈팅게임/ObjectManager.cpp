@@ -27,6 +27,8 @@ void ObjectManager::update()
 			}
 		}
 	}
+
+
 }
 
 void ObjectManager::clearDead()

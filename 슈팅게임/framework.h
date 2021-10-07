@@ -65,6 +65,7 @@
 #include "GameScene.h"
 #include "TitleMenu.h"
 #include "SceneManager.h"
+#include "HPBar.h"
 
 #define WIDTH  480
 #define HEIGHT 800

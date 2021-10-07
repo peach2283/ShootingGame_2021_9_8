@@ -166,6 +166,7 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="graphic.h" />
     <ClInclude Include="Gun.h" />
+    <ClInclude Include="HPBar.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="LaserItem.h" />
     <ClInclude Include="ObjectManager.h" />
@@ -220,6 +221,7 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="graphic.cpp" />
     <ClCompile Include="Gun.cpp" />
+    <ClCompile Include="HPBar.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="LaserItem.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
