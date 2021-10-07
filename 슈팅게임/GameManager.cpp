@@ -15,6 +15,7 @@ bool GameManager::dropBombItem[ENEMY_MAX] =  { false, false, false, false, true,
 											   false, false, false, false, true };
 
 int GameManager::playerCount = 3;
+float GameManager::playerHp  = 100;
 
 bool GameManager::bossDead  = false;
 bool GameManager::isPause   = false;
@@ -63,6 +64,11 @@ void GameManager::playerSpawn(float px, float py)
 	}
 }
 
+void GameManager::applyDamage(float damage)
+{
+	playerHp = playerHp - damage;
+}
+
 bool GameManager::getBossDead()
 {
 	return bossDead;
@@ -90,7 +96,10 @@ void GameManager::reset()
 
 	//게임관리 데이타 리셋//
 	enemyCount	= 0;
+
 	playerCount = 3;
+	playerHp    = 100;
+
 	bossDead = false;
-	isPause  = false;
+	isPause  = false;	
 }

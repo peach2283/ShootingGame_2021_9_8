@@ -10,11 +10,12 @@ private:
 	static bool dropLaserItem[ENEMY_MAX];
 	static bool dropBombItem [ENEMY_MAX];
 
-	static int  playerCount;
+	static int   playerCount; //플레이어 카운트
+	static float playerHp;    //플레이어 체력
+
 	static bool bossDead;    //true - 보스가 죽음, false- 보스가 죽지 않음
 
 	static bool isPause;     //true(일시중지), false(정상동작)
-
 public:
 
 	//적기카운트..증가 감소 함수//
@@ -33,6 +34,9 @@ public:
 
 	//플레이어 스폰하기
 	static void playerSpawn(float px, float py);
+
+	//플레이어 체력 감소하기
+	static void applyDamage(float damage);
 
 	//보스데드 공유 변수..게터/세터
 	static bool getBossDead();

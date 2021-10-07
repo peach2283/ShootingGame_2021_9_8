@@ -115,3 +115,17 @@ void Bitmap::drawBMP(float px, float py, Image* img)
 		}
 	}
 }
+
+void Bitmap::drawBMP(float px, float py, float fillAmount, Image* img)
+{
+	//이미지 출력하기//
+	for (int y = 0; y < img->height; y++)
+	{
+		for (int x = 0; x < img->width * fillAmount ; x++)
+		{
+			uint pixel = img->argb[y * img->width + x];
+
+			setPixel(px + x, py + y, pixel);
+		}
+	}
+}

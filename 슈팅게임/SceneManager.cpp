@@ -2,7 +2,7 @@
 
 Scene* SceneManager::scene[2]	   = { new TitleScene(), new GameScene() };
 
-int SceneManager::activeSceneIndex = 0;
+int SceneManager::activeSceneIndex = 1;
 int SceneManager::nextSceneIndex   =-1;
 
 void SceneManager::init()
