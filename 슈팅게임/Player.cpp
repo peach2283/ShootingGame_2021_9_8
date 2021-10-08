@@ -12,8 +12,6 @@ Player::Player(float px, float py) : GameObject("플레이어","플레이어", true, px,
 	this->imageTimer = 0;
 	this->imageDelay = 0.1; 
 
-	this->hp = 100;
-
 	this->state       = State::moveUp;
 	this->shieldTimer = 3;
 
@@ -294,7 +292,7 @@ void Player::onTriggerStay(GameObject* other)
 	else if (tag == "적기총알" || tag == "적기포탄")
 	{
 		//플레이어 체력 감소
-		hp = hp - 10;
+		GameManager::applyDamage(10);
 
 		//적기 총알제하기
 		destroy(other);
@@ -306,9 +304,9 @@ void Player::onTriggerStay(GameObject* other)
 		instantiate(new EnemyBulletExp(ex-10, ey), 1);
 
 		//플레이어 폭발 및 제거
-		if (hp <= 0)
+		if (GameManager::getPlayerHp() <= 0)
 		{
-			//explode();
+			explode();
 		}
 	}
 	else if (tag == "레이저아이템")

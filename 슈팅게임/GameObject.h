@@ -55,7 +55,7 @@ public:
 
 	void translate(float x, float y);
 
-	void instantiate(GameObject* o, int layer);
+	GameObject * instantiate(GameObject* o, int layer);
 	void destroy(GameObject* o);
 
 	//충돌체 추가하기//

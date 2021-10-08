@@ -173,6 +173,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBomb.h" />
     <ClInclude Include="PlayerBombExp.h" />
+    <ClInclude Include="PlayerIcon.h" />
     <ClInclude Include="PlayerLaser.h" />
     <ClInclude Include="PlayerLaserExp.h" />
     <ClInclude Include="PopupMenu.h" />
@@ -228,6 +229,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBomb.cpp" />
     <ClCompile Include="PlayerBombExp.cpp" />
+    <ClCompile Include="PlayerIcon.cpp" />
     <ClCompile Include="PlayerLaser.cpp" />
     <ClCompile Include="PlayerLaserExp.cpp" />
     <ClCompile Include="PopupMenu.cpp" />

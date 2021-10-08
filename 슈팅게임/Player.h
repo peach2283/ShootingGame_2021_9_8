@@ -18,8 +18,6 @@ private:
 	float imageTimer; //이미지 변경...측정
 	float imageDelay; //이미지 변경..대기 시간
 
-	float hp;  
-
 	State state;
 
 	float shieldTimer; //보호방패 지속시간(control 이후)

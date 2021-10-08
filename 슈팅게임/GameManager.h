@@ -38,6 +38,9 @@ public:
 	//플레이어 체력 감소하기
 	static void applyDamage(float damage);
 
+	//플레이어 체력 가져오기
+	static float getPlayerHp();
+
 	//보스데드 공유 변수..게터/세터
 	static bool getBossDead();
 	static void setBossDead();

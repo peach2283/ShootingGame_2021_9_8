@@ -1,7 +1,10 @@
 #include "framework.h"
 
 UIManager::UIManager() : GameObject("","", true, 0,0)
-{}
+{
+	this->hpBar = nullptr;
+	this->menu  = nullptr;
+}
 
 UIManager::~UIManager()
 {}
@@ -28,10 +31,15 @@ void UIManager::start()
 		instantiate(new BTNPause(370, 5), UI_LAYER);
 
 		//팝업메뉴 추가하기//
-		instantiate(new PopupMenu(117.5, 305.5), UI_LAYER);
+		menu = (PopupMenu*)instantiate(new PopupMenu(117.5, 305.5), UI_LAYER);
 
 		//플레이어 체력바 추가하기//
-		instantiate(new HPBar(100, 300), UI_LAYER);
+		hpBar = (HPBar*)instantiate(new HPBar(10, 20), UI_LAYER);
+
+		//플레이어 카운트..아이콘..추가하기//
+		instantiate(new PlayerIcon(200, 5), UI_LAYER);
+		instantiate(new PlayerIcon(250, 5), UI_LAYER);
+		instantiate(new PlayerIcon(300, 5), UI_LAYER);
 	}
 }
 
@@ -48,29 +56,16 @@ void UIManager::update()
 	{
 		//팝업메뉴..보이기 숨기기//
 		if (GameManager::getPause() == true)
-		{
-			//팝업메뉴 보이기
-			GameObject* menu = ObjectManager::find("팝업메뉴");
-
-			if (menu != nullptr)
-			{
-				menu->setActive(true);
-			}
-			else {
-				cout << "----팝업메뉴 객체를...찾지못함 ----" << endl;
-			}
+		{			
+			menu->setActive(true);
 		}
 		else {
-			//팝업메뉴 숨기기
-			GameObject* menu = ObjectManager::find("팝업메뉴");
-
-			if (menu != nullptr)
-			{
-				menu->setActive(false);
-			}
-			else {
-				cout << "----팝업메뉴 객체를...찾지못함 ----" << endl;
-			}
+			
+			menu->setActive(false);
 		}
+
+		//플레이어 체력바..변경하기//
+		float hp = GameManager::getPlayerHp();
+		hpBar->setFillAmount(hp / 100.0f);
 	}
 }

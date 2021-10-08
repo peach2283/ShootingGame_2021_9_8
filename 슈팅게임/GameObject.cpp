@@ -166,9 +166,10 @@ void GameObject::translate(float x, float y)
 	}
 }
 
-void GameObject::instantiate(GameObject* o, int layer)
+GameObject * GameObject::instantiate(GameObject* o, int layer)
 {
 	ObjectManager::instantiate(o, layer);
+	return o;  //인스턴스로..목록에 추가한 객체 반환하기
 }
 
 void GameObject::destroy(GameObject* o)

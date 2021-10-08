@@ -55,18 +55,25 @@ void GameManager::playerSpawn(float px, float py)
 	if (playerCount > 0)
 	{
 		ObjectManager::instantiate(new Player(px, py), 1);
+
 		playerCount--;
+		playerHp = 100;
 	}
 	else {
 		
 		//게임오버 UI 생성하기//
-		ObjectManager::instantiate(new GameOver(30, 250), UI_LAYER);
+		ObjectManager::instantiate(new GameOver(30, 250), UI_LAYER-1);
 	}
 }
 
 void GameManager::applyDamage(float damage)
 {
 	playerHp = playerHp - damage;
+}
+
+float GameManager::getPlayerHp()
+{
+	return playerHp;
 }
 
 bool GameManager::getBossDead()
