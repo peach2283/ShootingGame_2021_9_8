@@ -14,11 +14,13 @@ bool GameManager::dropBombItem[ENEMY_MAX] =  { false, false, false, false, true,
 											   false, false, false, false, true,
 											   false, false, false, false, true };
 
-int GameManager::playerCount = 3;
+int   GameManager::playerCount = 3;
 float GameManager::playerHp  = 100;
 
 bool GameManager::bossDead  = false;
 bool GameManager::isPause   = false;
+
+int GameManager::bombCount = 3;
 
 void GameManager::addEnemy() //스폰에서..적기 카운트 증가
 {
@@ -57,7 +59,9 @@ void GameManager::playerSpawn(float px, float py)
 		ObjectManager::instantiate(new Player(px, py), 1);
 
 		playerCount--;
-		playerHp = 100;
+
+		playerHp  = 100;
+		bombCount = 3;
 	}
 	else {
 		
@@ -76,9 +80,29 @@ float GameManager::getPlayerHp()
 	return playerHp;
 }
 
+int GameManager::getPlayerCount()
+{
+	return playerCount;
+}
+
 bool GameManager::getBossDead()
 {
 	return bossDead;
+}
+
+void GameManager::addBomb()
+{
+	bombCount++;
+}
+
+void GameManager::subBmob()
+{
+	bombCount--;
+}
+
+int GameManager::getBombCount()
+{
+	return bombCount;
 }
 
 void GameManager::setBossDead()
@@ -109,4 +133,6 @@ void GameManager::reset()
 
 	bossDead = false;
 	isPause  = false;	
+
+	bombCount = 3;
 }

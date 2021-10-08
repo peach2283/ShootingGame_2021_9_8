@@ -142,6 +142,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="BMP.h" />
+    <ClInclude Include="BombIcon.h" />
     <ClInclude Include="BTNPause.h" />
     <ClInclude Include="BombItem.h" />
     <ClInclude Include="Boss.h" />
@@ -199,6 +200,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="BMP.cpp" />
+    <ClCompile Include="BombIcon.cpp" />
     <ClCompile Include="BombItem.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BossExp.cpp" />

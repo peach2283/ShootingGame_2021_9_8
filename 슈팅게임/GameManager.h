@@ -16,6 +16,9 @@ private:
 	static bool bossDead;    //true - 보스가 죽음, false- 보스가 죽지 않음
 
 	static bool isPause;     //true(일시중지), false(정상동작)
+
+	static int bombCount;    //폭탄 카운트
+
 public:
 
 	//적기카운트..증가 감소 함수//
@@ -40,6 +43,14 @@ public:
 
 	//플레이어 체력 가져오기
 	static float getPlayerHp();
+
+	//플레이어 카운트 가져오기
+	static int getPlayerCount();
+
+	//폰탄 카운트 감소/증가/ 가져오기
+	static void addBomb();  //폰탄증가
+	static void subBmob();  //폰탄감수
+	static int  getBombCount(); //폰타카운트 가져오기
 
 	//보스데드 공유 변수..게터/세터
 	static bool getBossDead();

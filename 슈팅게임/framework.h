@@ -67,6 +67,7 @@
 #include "SceneManager.h"
 #include "HPBar.h"
 #include "PlayerIcon.h"
+#include "BombIcon.h"
 
 #define WIDTH  480
 #define HEIGHT 800
