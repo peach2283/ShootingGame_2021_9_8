@@ -4,6 +4,13 @@
 #include "framework.h"
 #include "슈팅게임.h"
 
+//폰트 헤더..인클루드 하기//
+#include <ft2build.h>
+#include <freetype/freetype.h>
+
+//dll(라이브러리) 사용하기//
+#pragma comment(lib, "freetype.lib")
+
 #define MAX_LOADSTRING 100
 
 
@@ -42,6 +49,22 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     //초기화 
     START_DEBUG_CONSOLE();                   //디버그 콘솔창 열기
     initGraphic(hWnd, 0, 0, WIDTH, HEIGHT);  //그래픽 초기화
+
+    ///////////////////////Freetype 폰트 테스트////////////////////
+    FT_Library library;
+
+    //폰트 라이브러리 초기화
+    if (FT_Init_FreeType(&library) == 0)
+    {
+        cout << "폰트 초기화 성공" << endl;
+    }
+    else {
+
+        cout << "폰트 초기화 실패" << endl;
+    }
+
+
+    ///////////////////////////////////////////////////////////////
 
     Random::Init();         //랜덤 초기화
     Time::init();           //타이머 초기화
