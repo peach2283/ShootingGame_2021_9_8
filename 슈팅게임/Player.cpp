@@ -16,7 +16,6 @@ Player::Player(float px, float py) : GameObject("ÇÃ·¹ÀÌ¾î","ÇÃ·¹ÀÌ¾î", true, px,
 	this->shieldTimer = 3;
 
 	this->laserCount = 0;
-	this->bombCount  = 3;
 }
 
 Player::~Player()
@@ -264,20 +263,20 @@ void Player::fire()
 	//ÆøÅº...¹ß»çÇÏ±â//
 	if (Input::getKeyDown("z") == true && GameManager::getPause() == false)
 	{
-		if (bombCount > 0)
+		if (GameManager::getBombCount() > 0)
 		{
 			float px = getPx();
 			float py = getPy();
 
 			instantiate(new PlayerBomb(px + 15, py), 0);
 			
-			//bombCount--; //ÆøÅº°¹¼ö ÁÙÀÌ±â
+			GameManager::subBomb(); //ÆøÅº°¹¼ö ÁÙÀÌ±â
 		}
 		else {
 			cout << "---³²¾ÆÀÖ´Â ÆøÅºÀÌ ¾ø½À´Ï´Ù---" << endl;
 		}
 
-		cout << "ÆøÅº °¹¼ö " << bombCount << endl;
+		cout << "ÆøÅº °¹¼ö " << GameManager::getBombCount() << endl;
 	}
 }
 
@@ -324,9 +323,9 @@ void Player::onTriggerStay(GameObject* other)
 	else if (tag == "ÆøÅº¾ÆÀÌÅÛ")
 	{
 		//ÆøÅº°¹¼ö Áõ°¡
-		bombCount++;
+		GameManager::addBomb();
 
-		cout << "ÆøÅº °¹¼ö " << bombCount << endl;
+		cout << "ÆøÅº °¹¼ö " << GameManager::getBombCount() << endl;
 
 		//ÆøÅº¾ÆÀÌÅÛ »èÁ¦//
 		destroy(other);

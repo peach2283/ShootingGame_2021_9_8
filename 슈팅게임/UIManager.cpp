@@ -90,5 +90,21 @@ void UIManager::update()
 				playerIcon[i]->setActive(false);
 			}
 		}
+
+
+		//남은 폭탄갯수 아이콘..보여주기//
+		count = GameManager::getBombCount();
+
+		for (int i = 0; i < 5; i++)
+		{
+			if (i < count)
+			{
+				bombIcon[i]->setActive(true);
+			}
+			else {
+
+				bombIcon[i]->setActive(false);
+			}
+		}
 	}
 }

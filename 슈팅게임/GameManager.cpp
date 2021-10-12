@@ -92,10 +92,13 @@ bool GameManager::getBossDead()
 
 void GameManager::addBomb()
 {
-	bombCount++;
+	if (bombCount < 5)  //ÆøÅº °¹¼ö´Â ÃÖ´ë 5°³ ±îÁö 
+	{
+		bombCount++;
+	}
 }
 
-void GameManager::subBmob()
+void GameManager::subBomb()
 {
 	bombCount--;
 }

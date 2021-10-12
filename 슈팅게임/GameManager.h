@@ -49,7 +49,7 @@ public:
 
 	//폰탄 카운트 감소/증가/ 가져오기
 	static void addBomb();  //폰탄증가
-	static void subBmob();  //폰탄감수
+	static void subBomb();  //폰탄감수
 	static int  getBombCount(); //폰타카운트 가져오기
 
 	//보스데드 공유 변수..게터/세터
