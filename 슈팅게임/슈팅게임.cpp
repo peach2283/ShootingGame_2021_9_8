@@ -4,15 +4,10 @@
 #include "framework.h"
 #include "슈팅게임.h"
 
-//폰트 헤더..인클루드 하기//
-#include <ft2build.h>
-#include <freetype/freetype.h>
-
 //dll(라이브러리) 사용하기//
 #pragma comment(lib, "freetype.lib")
 
 #define MAX_LOADSTRING 100
-
 
 // 전역 변수:
 HINSTANCE hInst;                                // 현재 인스턴스입니다.
@@ -49,58 +44,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     //초기화 
     START_DEBUG_CONSOLE();                   //디버그 콘솔창 열기
     initGraphic(hWnd, 0, 0, WIDTH, HEIGHT);  //그래픽 초기화
-
-    ///////////////////////Freetype 폰트 테스트////////////////////
-    FT_Library library;
-    FT_Face    face;
-
-    //폰트 라이브러리 초기화
-    if (FT_Init_FreeType(&library) == 0)
-    {
-        cout << "폰트 초기화 성공" << endl;
-    }
-    else {
-
-        cout << "폰트 초기화 실패" << endl;
-    }
-
-    //폰트..파일 로드하기//
-    if (FT_New_Face(library, "Asset/Font/Medium.ttf", 0, &face) == 0)
-    {
-        cout << "폰트 파일 로드 성공" << endl;
-    }
-    else {
-        cout << "폰트 파일 로드 실패" << endl;
-    }
-
-    //폰트..크기 지정하기//
-    FT_Set_Pixel_Sizes(face, 32, 32);
-
-    //글자 폰트를 face에서 찾아오기
-    WCHAR text = L'가';
-    int index  = FT_Get_Char_Index(face, text);
-
-    //font 정보를..출력가능한 이미지 형태로..변환하기
-    FT_Load_Glyph(face, index,  FT_LOAD_DEFAULT);        //글자정보(서체 - Glyph)로드하기
-    FT_Render_Glyph(face->glyph, FT_RENDER_MODE_NORMAL);//글자정보를 이미지로 변환하기 
-
-    int width   = face->glyph->bitmap.width; //이미지 가로크기
-    int height  = face->glyph->bitmap.rows;  //이미지 세로크기
-    unsigned char * buffer = face->glyph->bitmap.buffer; //이미지 데이타 버퍼
-
-    for (int y = 0; y < height; y++)
-    {
-        for (int x = 0; x < width; x++)
-        {
-            unsigned char value=buffer[y * width + x];
-
-            printf("%4d", value);
-        }
-
-        printf("\n");
-    }
-
-    ///////////////////////////////////////////////////////////////
 
     Random::Init();         //랜덤 초기화
     Time::init();           //타이머 초기화

@@ -47,6 +47,9 @@ void UIManager::start()
 		bombIcon[2] = (BombIcon*)instantiate(new BombIcon(60 , 740), UI_LAYER);
 		bombIcon[3] = (BombIcon*)instantiate(new BombIcon(85 , 740), UI_LAYER);
 		bombIcon[4] = (BombIcon*)instantiate(new BombIcon(110, 740), UI_LAYER);
+
+		//텍스트.UI 테스트하기
+		instantiate(new Text(100, 100), UI_LAYER);
 	}
 }
 
