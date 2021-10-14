@@ -35,7 +35,7 @@ void Text::start()
     }
 
     //폰트..크기 지정하기//
-    FT_Set_Pixel_Sizes(face, 64, 64);
+    FT_Set_Pixel_Sizes(face, size, size);
 }
 
 void Text::draw()
@@ -43,9 +43,6 @@ void Text::draw()
     //글자 출력위치 변수
     float fontx = getPx();
     float fonty = getPy();
-
-    //글자 폰트를 face에서 찾아오기
-    wstring text = L"점수";
 
     for (int i = 0; i < text.length(); i++)
     {
@@ -58,6 +55,10 @@ void Text::draw()
         int width  = face->glyph->bitmap.width; //이미지 가로크기
         int height = face->glyph->bitmap.rows;  //이미지 세로크기
         unsigned char* buffer = face->glyph->bitmap.buffer; //이미지 데이타 버퍼
+
+        //출력이미지 내부 위치 재조정
+        int left =  face->glyph->bitmap_left;
+        int top  = -face->glyph->bitmap_top;
 
         for (int y = 0; y < height; y++)
         {
@@ -72,23 +73,56 @@ void Text::draw()
 
                     //배경색 가져오기//
                     unsigned char R, G, B;
-                    getPixel(fontx + x, fonty + y, &R, &G, &B);
-
-                    //폰트 색상//
-                    unsigned char r=255, g=0, b=0;
-
+                    getPixel(fontx + x + left,  fonty + y + top , &R, &G, &B);
+                  
                     //알파블렌딩 공식적용하기
                     unsigned char _r = r * alpha + R * (1 - alpha);
                     unsigned char _g = g * alpha + G * (1 - alpha);
                     unsigned char _b = b * alpha + B * (1 - alpha);
 
-                    setPixel(fontx+x, fonty+y, _r, _g, _b);
+                    setPixel(fontx + x + left, fonty + y + top , _r, _g, _b);
                 }
             }            
         }
 
         //다음 글자출력 위치로..이동하기//
         fontx = fontx + face->glyph->advance.x/64;
-        fonty = fonty + face->glyph->advance.y/64;
+        fonty = fonty - face->glyph->advance.y/64;
     }
+}
+
+void Text::setText(wstring text)
+{
+    this->text = text;
+}
+
+void Text::setColor(unsigned char r, unsigned char g, unsigned char b)
+{
+    this->r = r;
+    this->g = g;
+    this->b = b;
+}
+
+void Text::setSize(int size)
+{
+    this->size = size;
+    FT_Set_Pixel_Sizes(face, size, size);
+}
+
+void Text::setFontFamily(const char* fileName)
+{
+    //기존에..로드한 폰트 face 제거하기//
+    FT_Done_Face(face);
+
+    //폰트..파일 로드하기//
+    if (FT_New_Face(library, fileName, 0, &face) == 0)
+    {
+        cout << "폰트 파일 로드 성공" << endl;
+    }
+    else {
+        cout << "폰트 파일 로드 실패" << endl;
+    }
+
+    //폰트..크기 지정하기//
+    FT_Set_Pixel_Sizes(face, size, size);
 }

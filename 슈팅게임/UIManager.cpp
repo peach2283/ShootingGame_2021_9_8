@@ -49,7 +49,12 @@ void UIManager::start()
 		bombIcon[4] = (BombIcon*)instantiate(new BombIcon(110, 740), UI_LAYER);
 
 		//텍스트.UI 테스트하기
-		instantiate(new Text(100, 100), UI_LAYER);
+		Text * text=(Text*)instantiate(new Text(100, 100), UI_LAYER);
+
+		text->setText(L"안녕하세요");
+		text->setColor(255, 255, 255);
+		text->setSize(20);
+		text->setFontFamily("Asset/font/Bold.ttf");
 	}
 }
 
