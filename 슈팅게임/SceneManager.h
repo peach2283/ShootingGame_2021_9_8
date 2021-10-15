@@ -6,7 +6,7 @@
 class SceneManager
 {
 private:
-	static Scene* scene[2];
+	static Scene* scene[3];
 	static int activeSceneIndex;
 	static int nextSceneIndex;
 

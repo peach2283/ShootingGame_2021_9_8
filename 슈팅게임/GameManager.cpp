@@ -21,6 +21,7 @@ bool GameManager::bossDead  = false;
 bool GameManager::isPause   = false;
 
 int GameManager::bombCount = 3;
+int GameManager::score     = 0;
 
 void GameManager::addEnemy() //스폰에서..적기 카운트 증가
 {
@@ -123,6 +124,16 @@ void GameManager::setPause(bool pause)
 	isPause = pause;
 }
 
+void GameManager::addScore(int point)
+{
+	score = score + point;
+}
+
+int GameManager::getScore()
+{
+	return score;
+}
+
 void GameManager::reset()
 {
 	//타이머 리셋//
@@ -138,4 +149,5 @@ void GameManager::reset()
 	isPause  = false;	
 
 	bombCount = 3;
+	score	  = 0;
 }

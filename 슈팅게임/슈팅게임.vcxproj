@@ -155,6 +155,7 @@
     <ClInclude Include="DeadBoss.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="deltaTime.h" />
+    <ClInclude Include="EndingScene.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyBullet.h" />
     <ClInclude Include="EnemyBulletExp.h" />
@@ -214,6 +215,7 @@
     <ClCompile Include="DeadBoss.cpp" />
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="deltaTime.cpp" />
+    <ClCompile Include="EndingScene.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyBullet.cpp" />
     <ClCompile Include="EnemyBulletExp.cpp" />

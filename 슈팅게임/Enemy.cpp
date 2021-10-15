@@ -203,6 +203,9 @@ void Enemy::onTriggerStay(GameObject* other)
 				instantiate(new LaserItem(px + 88, py + 50), 0);
 			}
 			**************************/
+
+			//점수 올리기//
+			GameManager::addScore(10);
 		}
 	}
 	else if (tag == "방패" || tag == "플레이어폭탄폭발")

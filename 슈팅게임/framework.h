@@ -69,6 +69,7 @@
 #include "PlayerIcon.h"
 #include "BombIcon.h"
 #include "Text.h"
+#include "EndingScene.h"
 
 #define WIDTH  480
 #define HEIGHT 800

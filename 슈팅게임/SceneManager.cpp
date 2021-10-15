@@ -1,8 +1,8 @@
 #include "framework.h"
 
-Scene* SceneManager::scene[2]	   = { new TitleScene(), new GameScene() };
+Scene* SceneManager::scene[3]	   = { new TitleScene(), new GameScene(), new EndingScene() };
 
-int SceneManager::activeSceneIndex = 1;
+int SceneManager::activeSceneIndex = 2;
 int SceneManager::nextSceneIndex   =-1;
 
 void SceneManager::init()

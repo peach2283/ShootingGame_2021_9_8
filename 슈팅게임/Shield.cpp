@@ -38,6 +38,9 @@ void Shield::onTriggerStay(GameObject* other)
 
 		instantiate(new ShipExp(px + 30, py + 20), 1); //적기폭발효과
 		destroy(other);						           //적기제거
+
+		//점수 올리기//
+		GameManager::addScore(10);
 	}
 	else if (tag == "보스")
 	{

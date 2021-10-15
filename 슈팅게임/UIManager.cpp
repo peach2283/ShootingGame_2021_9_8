@@ -73,6 +73,14 @@ void UIManager::start()
 		text->setColor(0, 0, 0);
 		text->setSize(16);
 		text->setFontFamily("Asset/font/Medium.ttf");
+
+		//점수 텍스트 UI 만들기
+		scoreText = (Text*)instantiate(new Text(78, 70), UI_LAYER);  //점수 출력 텍스트
+
+		scoreText->setText(L"0");
+		scoreText->setColor(0, 0, 0);
+		scoreText->setSize(18);
+		scoreText->setFontFamily("Asset/font/Bold.ttf");
 	}
 }
 
@@ -139,5 +147,11 @@ void UIManager::update()
 				bombIcon[i]->setActive(false);
 			}
 		}
+
+		//게임 점수 화면 출력하기//
+		int score = GameManager::getScore();
+		
+		wsprintf(buffer, L"%d", score);
+		scoreText->setText(wstring(buffer));
 	}
 }

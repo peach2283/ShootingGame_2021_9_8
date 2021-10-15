@@ -183,6 +183,9 @@ void Boss::onChildDestroyed()
 
 	cout << "¼Ò¸êµÈ ÀÚ½Ä°´Ã¼ °¹¼ö " << childCount <<  endl;
 
+	//Á¡¼ö ¿Ã¸®±â//
+	GameManager::addScore(15);
+
 	//if (childCount == 25)
 	if (childCount == 25)
 	{

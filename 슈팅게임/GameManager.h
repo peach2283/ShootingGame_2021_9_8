@@ -19,6 +19,8 @@ private:
 
 	static int bombCount;    //폭탄 카운트
 
+	static int score;		//게임점수
+
 public:
 
 	//적기카운트..증가 감소 함수//
@@ -59,6 +61,10 @@ public:
 	//일시중지 변수(isPause)게터/세터
 	static bool getPause();
 	static void setPause(bool pause);
+
+	//점수 증가, 가져오기 함수//
+	static void addScore(int point);
+	static int  getScore();
 
 	//게임매니저..데이타..리셋하기//
 	static void reset();
