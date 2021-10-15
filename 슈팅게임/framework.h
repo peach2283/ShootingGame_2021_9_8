@@ -73,4 +73,8 @@
 #define WIDTH  480
 #define HEIGHT 800
 
+//버전 정보//
+#define VER_MAJOR 1
+#define VER_MINOR 0
+
 using namespace std;

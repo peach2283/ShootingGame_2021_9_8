@@ -34,12 +34,12 @@ void UIManager::start()
 		menu = (PopupMenu*)instantiate(new PopupMenu(117.5, 305.5), UI_LAYER);
 
 		//플레이어 체력바 추가하기//
-		hpBar = (HPBar*)instantiate(new HPBar(10, 20), UI_LAYER);
+		hpBar = (HPBar*)instantiate(new HPBar(36, 20), UI_LAYER);
 
 		//플레이어 카운트..아이콘..추가하기//
-		playerIcon[0] = (PlayerIcon * )  instantiate(new PlayerIcon(200, 5), UI_LAYER);
-		playerIcon[1] = (PlayerIcon  *)  instantiate(new PlayerIcon(250, 5), UI_LAYER);
-		playerIcon[2] = (PlayerIcon  *)  instantiate(new PlayerIcon(300, 5), UI_LAYER);
+		playerIcon[0] = (PlayerIcon * )  instantiate(new PlayerIcon(222, 5), UI_LAYER);
+		playerIcon[1] = (PlayerIcon  *)  instantiate(new PlayerIcon(272, 5), UI_LAYER);
+		playerIcon[2] = (PlayerIcon  *)  instantiate(new PlayerIcon(322, 5), UI_LAYER);
 
 		//폭탄 카운트...아이콘 ... 추가하기
 		bombIcon[0] = (BombIcon*)instantiate(new BombIcon(10 , 740), UI_LAYER);
@@ -48,13 +48,31 @@ void UIManager::start()
 		bombIcon[3] = (BombIcon*)instantiate(new BombIcon(85 , 740), UI_LAYER);
 		bombIcon[4] = (BombIcon*)instantiate(new BombIcon(110, 740), UI_LAYER);
 
-		//텍스트.UI 테스트하기
-		Text * text=(Text*)instantiate(new Text(100, 100), UI_LAYER);
+		//텍스트 UI 추가하기//
+		Text * text=(Text*)instantiate(new Text(5, 36), UI_LAYER);  //체력 텍스트
 
-		text->setText(L"안녕하세요");
+		text->setText(L"HP");
 		text->setColor(255, 255, 255);
-		text->setSize(20);
-		text->setFontFamily("Asset/font/Bold.ttf");
+		text->setSize(16);
+		text->setFontFamily("Asset/font/Medium.ttf");
+
+		text = (Text*)instantiate(new Text(5, 68), UI_LAYER);  //점수 텍스트
+
+		text->setText(L"SCORE");
+		text->setColor(255, 255, 255);
+		text->setSize(16);
+		text->setFontFamily("Asset/font/Medium.ttf");
+
+		text = (Text*)instantiate(new Text(250, 780), UI_LAYER);  //버전 텍스트
+
+		//버전 정보 문자열 만들기//
+		WCHAR buffer[100];
+		wsprintf(buffer, L"WinAPI Shooting (Ver %d.%d)", VER_MAJOR, VER_MINOR);
+
+		text->setText(buffer);
+		text->setColor(0, 0, 0);
+		text->setSize(16);
+		text->setFontFamily("Asset/font/Medium.ttf");
 	}
 }
 
@@ -81,7 +99,14 @@ void UIManager::update()
 
 		//플레이어 체력바..변경하기//
 		float hp = GameManager::getPlayerHp();
+		WCHAR buffer[10];
+
+		hp = (hp < 0) ? 0 : hp;
+
+		wsprintf(buffer, L"%d", (int)hp);
+
 		hpBar->setFillAmount(hp / 100.0f);
+		hpBar->setText(wstring(buffer));
 
 		//남은 플레이어 갯수 아이콘..보여주기//
 		int  count = GameManager::getPlayerCount();

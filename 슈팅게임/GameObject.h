@@ -62,7 +62,7 @@ public:
 	void addBoxCollider2D(float x, float y, float width, float height);
 
 	//자식 게임오브젝트..추가/삭제 하기//
-	void addChildObject(GameObject* o, int layer);
+	GameObject* addChildObject(GameObject* o, int layer);
 	
 	//충돌체 반환하기
 	vector<BoxCollider2D*> getBoxCollider2D();
