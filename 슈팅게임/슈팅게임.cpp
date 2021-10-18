@@ -42,7 +42,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     MSG msg = {0,0,0, 0,0,0};
 
     //초기화 
-    START_DEBUG_CONSOLE();                   //디버그 콘솔창 열기
+    //START_DEBUG_CONSOLE();                 //디버그 콘솔창 열기
     initGraphic(hWnd, 0, 0, WIDTH, HEIGHT);  //그래픽 초기화
 
     Random::Init();         //랜덤 초기화
@@ -71,7 +71,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
   
     //종료
     SceneManager::unload();
-    STOP_DEBUG_CONSOLE();
+    //STOP_DEBUG_CONSOLE();
     exitGraphic();
 
     return (int) msg.wParam;

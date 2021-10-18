@@ -70,6 +70,7 @@
 #include "BombIcon.h"
 #include "Text.h"
 #include "EndingScene.h"
+#include "EndingBG.h"
 
 #define WIDTH  480
 #define HEIGHT 800

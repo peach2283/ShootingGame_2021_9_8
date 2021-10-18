@@ -81,6 +81,27 @@ void UIManager::start()
 		scoreText->setColor(0, 0, 0);
 		scoreText->setSize(18);
 		scoreText->setFontFamily("Asset/font/Bold.ttf");
+
+	}
+	else if (name == "EndingScene")
+	{		
+		//텍스트 UI 추가하기//
+		Text* text = (Text*)instantiate(new Text(84, 60), UI_LAYER);  //체력 텍스트
+
+		text->setText(L"MISSION");
+		text->setColor(255, 255, 255);
+		text->setSize(64);
+		text->setFontFamily("Asset/font/Medium.ttf");
+
+		text = (Text*)instantiate(new Text(84, 120), UI_LAYER);  //체력 텍스트
+
+		text->setText(L"COMPLETE");
+		text->setColor(255, 0, 0);
+		text->setSize(48);
+		text->setFontFamily("Asset/font/Medium.ttf");
+
+		//종료 버튼 추가하기(Tile 버튼 재사용)
+		instantiate(new Exit(150, 700), UI_LAYER);
 	}
 }
 

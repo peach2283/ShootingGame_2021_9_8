@@ -9,5 +9,5 @@ public:
 	EndingScene();
 	~EndingScene();
 
-	void start();
+	void load();
 };

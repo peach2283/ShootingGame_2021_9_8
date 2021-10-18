@@ -2,7 +2,7 @@
 
 Scene* SceneManager::scene[3]	   = { new TitleScene(), new GameScene(), new EndingScene() };
 
-int SceneManager::activeSceneIndex = 2;
+int SceneManager::activeSceneIndex = 0;
 int SceneManager::nextSceneIndex   =-1;
 
 void SceneManager::init()
@@ -38,7 +38,7 @@ void SceneManager::unload()
 
 void SceneManager::loadScene(string name)
 {
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		if (scene[i]->getName() == name)
 		{

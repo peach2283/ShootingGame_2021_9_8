@@ -133,7 +133,7 @@ void ObjectManager::draw()
 			if (gameObject[layer][i]->getActive() == true)
 			{
 				gameObject[layer][i]->draw();
-				gameObject[layer][i]->onDrawGizmos();
+				//gameObject[layer][i]->onDrawGizmos();
 			}
 		}
 	}

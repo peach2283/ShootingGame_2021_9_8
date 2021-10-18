@@ -27,7 +27,7 @@ void ReturningPlayer::update()
 		//귀환 플레이어 제거
 		destroy(this);
 
-		//스테이지 클리어//
-		cout << "====스테이지 클리어====" << endl;
+		//스테이지 클리어 : 엔딩씬 전환//
+		SceneManager::loadScene("EndingScene");
 	}
 }
